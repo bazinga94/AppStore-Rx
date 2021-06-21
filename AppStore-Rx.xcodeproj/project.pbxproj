@@ -16,6 +16,7 @@
 		43775734267B91DC0000909C /* AppStore_RxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775733267B91DC0000909C /* AppStore_RxUITests.swift */; };
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B239651226807F1F00432C67 /* SearchAppListViewController.xib */; };
+		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		43775735267B91DC0000909C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B239651126807F1F00432C67 /* SearchAppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListViewController.swift; sourceTree = "<group>"; };
 		B239651226807F1F00432C67 /* SearchAppListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAppListViewController.xib; sourceTree = "<group>"; };
+		B239652B2680821900432C67 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B2619F07267C2295008B9D0E /* Application */,
+				B239652A268081C400432C67 /* Extension */,
 				B2619F08267C2372008B9D0E /* Presentation(MVVM) */,
 				B2619F06267C21FA008B9D0E /* Domain(Business) */,
 				B2619F09267C239B008B9D0E /* Data(Repository) */,
@@ -127,6 +130,14 @@
 				43775735267B91DC0000909C /* Info.plist */,
 			);
 			path = "AppStore-RxUITests";
+			sourceTree = "<group>";
+		};
+		B239652A268081C400432C67 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B239652B2680821900432C67 /* Extensions.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B2619F06267C21FA008B9D0E /* Domain(Business) */ = {
@@ -365,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B239652C2680821900432C67 /* Extensions.swift in Sources */,
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
