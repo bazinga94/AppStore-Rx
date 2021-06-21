@@ -16,6 +16,8 @@
 		4377571E267B91DC0000909C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4377571C267B91DC0000909C /* LaunchScreen.storyboard */; };
 		43775729267B91DC0000909C /* AppStore_RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775728267B91DC0000909C /* AppStore_RxTests.swift */; };
 		43775734267B91DC0000909C /* AppStore_RxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775733267B91DC0000909C /* AppStore_RxUITests.swift */; };
+		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
+		B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B239651226807F1F00432C67 /* SearchAppListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4377572F267B91DC0000909C /* AppStore-RxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppStore-RxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43775733267B91DC0000909C /* AppStore_RxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore_RxUITests.swift; sourceTree = "<group>"; };
 		43775735267B91DC0000909C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B239651126807F1F00432C67 /* SearchAppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListViewController.swift; sourceTree = "<group>"; };
+		B239651226807F1F00432C67 /* SearchAppListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAppListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,8 @@
 		B2619F0C267C24EB008B9D0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B239651126807F1F00432C67 /* SearchAppListViewController.swift */,
+				B239651226807F1F00432C67 /* SearchAppListViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			files = (
 				4377571E267B91DC0000909C /* LaunchScreen.storyboard in Resources */,
 				4377571B267B91DC0000909C /* Assets.xcassets in Resources */,
+				B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */,
 				43775716267B91D90000909C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +376,7 @@
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
+				B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "AppStore-Rx/Info.plist";
+				INFOPLIST_FILE = "AppStore-Rx/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -553,7 +561,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jongko.AppStore-Rx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -563,7 +571,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "AppStore-Rx/Info.plist";
+				INFOPLIST_FILE = "AppStore-Rx/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -571,7 +579,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jongko.AppStore-Rx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
