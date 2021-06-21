@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		4377570F267B91D90000909C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4377570E267B91D90000909C /* AppDelegate.swift */; };
 		43775711267B91D90000909C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775710267B91D90000909C /* SceneDelegate.swift */; };
-		43775713267B91D90000909C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775712267B91D90000909C /* ViewController.swift */; };
-		43775716267B91D90000909C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43775714267B91D90000909C /* Main.storyboard */; };
 		43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43775717267B91D90000909C /* AppStore_Rx.xcdatamodeld */; };
 		4377571B267B91DC0000909C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4377571A267B91DC0000909C /* Assets.xcassets */; };
 		4377571E267B91DC0000909C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4377571C267B91DC0000909C /* LaunchScreen.storyboard */; };
@@ -41,8 +39,6 @@
 		4377570B267B91D90000909C /* AppStore-Rx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppStore-Rx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4377570E267B91D90000909C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43775710267B91D90000909C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		43775712267B91D90000909C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		43775715267B91D90000909C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43775718267B91D90000909C /* AppStore_Rx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AppStore_Rx.xcdatamodel; sourceTree = "<group>"; };
 		4377571A267B91DC0000909C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4377571D267B91DC0000909C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,8 +105,6 @@
 				B2619F08267C2372008B9D0E /* Presentation(MVVM) */,
 				B2619F06267C21FA008B9D0E /* Domain(Business) */,
 				B2619F09267C239B008B9D0E /* Data(Repository) */,
-				43775712267B91D90000909C /* ViewController.swift */,
-				43775714267B91D90000909C /* Main.storyboard */,
 				4377571C267B91DC0000909C /* LaunchScreen.storyboard */,
 				43775717267B91D90000909C /* AppStore_Rx.xcdatamodeld */,
 			);
@@ -347,7 +341,6 @@
 				4377571E267B91DC0000909C /* LaunchScreen.storyboard in Resources */,
 				4377571B267B91DC0000909C /* Assets.xcassets in Resources */,
 				B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */,
-				43775716267B91D90000909C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43775713267B91D90000909C /* ViewController.swift in Sources */,
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
@@ -412,14 +404,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		43775714267B91D90000909C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43775715267B91D90000909C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4377571C267B91DC0000909C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
