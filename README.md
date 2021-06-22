@@ -31,7 +31,9 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 + Domain Model과 Entity와의 차이도 크지 않다면 똑같이 사용해도 괜찮음
 
 
-참고: 
+참고
+
+
 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
 
