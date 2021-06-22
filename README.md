@@ -5,25 +5,25 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 	- View:
 		애니메이션, 사용자 입력 등 UI 관련 처리
 	- Presenter:
-		ViewModel, View에 의존적이지 않음
+		"ViewModel", View에 의존적이지 않음
 	
 	
 2. Domain Layer
 	- UseCase:
 		Entity를 사용하여 비즈니스 로직 구현(업무 요구 사항)
 	- Domain Model:
-		앱에서 사용하는 실질적인 데이터
+		앱에서 사용하는 실질적인 데이터(display model)
 	- Translator:
-		Entity <-> Domain Model 변환, ViewModel에서 사용할 format
+		Entity <-> Domain Model 변환, ViewModel에서 사용할 format으로
 	
 	
 3. Data Layer
 	- Repository:
-		UseCase가 필요로 하는 데이터 관련 로직 구현
+		UseCase가 필요로 하는 데이터 관련 로직 구현(통신, DB 조회 등등..), Data Source 객체 교체 가능하게
 	- Data Source:
-		데이터의 입출력 실행
+		데이터의 입출력 실행, 인터페이스 형태로 제공(통신 API or 로컬 DB or mock 데이터 접근 등으로 전환 가능)
 	- Entity:
-		통신 응답 JSON, DB 테이블 데이터
+		통신 응답 JSON, DB 테이블 데이터(통신의 경우 Codable struct)
 
 
 + "패턴, 구조" 에 따라 Domain Layer 와 Repository는 합쳐져도 상관없음 
