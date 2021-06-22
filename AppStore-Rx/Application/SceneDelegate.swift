@@ -21,7 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		window = UIWindow(frame: windowScene.coordinateSpace.bounds)
 		window?.windowScene = windowScene
 		let navigationController = UINavigationController()
-//		window?.rootViewController = SearchAppListViewController()
 		window?.rootViewController = navigationController
 		appFlowCoordinator = AppFlowCoordinator(navigationController: navigationController, appDIContainer: appDIContainer)
 		appFlowCoordinator?.start()

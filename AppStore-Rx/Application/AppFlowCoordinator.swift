@@ -21,7 +21,6 @@ class AppFlowCoordinator {
 		// 만약 유저가 회원등록, 로그인 과정이 필요하면 App에서는 여기서 회원등록, 로그인 과정을 수행하면 된다.
 		let searchAppSceneDIContainer = appDIContainer.makeSearchAppSceneDIContainer()
 		let searchAppSceneFlowCoordinator = searchAppSceneDIContainer.makeSearchAppSceneFlowCoordinator(navigationController: navigationController)
-			//moviesSceneDIContainer.makeMoviesSearchFlowCoordinator(navigationController: navigationController)
 		searchAppSceneFlowCoordinator.start()
 	}
 }
