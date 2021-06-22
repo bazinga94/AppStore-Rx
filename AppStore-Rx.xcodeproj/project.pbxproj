@@ -179,8 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				4386C96526821443009B4A2D /* DomainModel */,
-				4386C935268208A7009B4A2D /* Translator */,
-				4386C936268208A7009B4A2D /* UseCase */,
 			);
 			path = "Domain(Business)";
 			sourceTree = "<group>";
@@ -208,20 +206,6 @@
 			children = (
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		4386C935268208A7009B4A2D /* Translator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Translator;
-			sourceTree = "<group>";
-		};
-		4386C936268208A7009B4A2D /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UseCase;
 			sourceTree = "<group>";
 		};
 		4386C938268208DA009B4A2D /* DataSource */ = {
