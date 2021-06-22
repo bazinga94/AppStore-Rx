@@ -20,6 +20,7 @@
 		4386C9432682096E009B4A2D /* SearchAppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C9422682096E009B4A2D /* SearchAppListViewModel.swift */; };
 		4386C95E2682126F009B4A2D /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C95D2682126F009B4A2D /* Dynamic.swift */; };
 		4386C96826821485009B4A2D /* SearchAppSceneDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */; };
+		4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */; };
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B239651226807F1F00432C67 /* SearchAppListViewController.xib */; };
 		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
@@ -68,6 +69,7 @@
 		4386C9422682096E009B4A2D /* SearchAppListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppListViewModel.swift; sourceTree = "<group>"; };
 		4386C95D2682126F009B4A2D /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneDomainModel.swift; sourceTree = "<group>"; };
+		4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppInfoListResponse+Mapping.swift"; sourceTree = "<group>"; };
 		6DFDB46CE89F0EC153067207 /* Pods-AppStore-RxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EB66AE1BD53F634D6CC5D0D /* Pods_AppStore_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBE2E64F1BB4AFE8021E7AB /* Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-Rx-AppStore-RxUITests/Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				4386C96526821443009B4A2D /* DomainModel */,
-				4386C937268208A7009B4A2D /* DomainModel */,
 				4386C935268208A7009B4A2D /* Translator */,
 				4386C936268208A7009B4A2D /* UseCase */,
 			);
@@ -197,6 +198,7 @@
 		4386C93326820736009B4A2D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -220,13 +222,6 @@
 			children = (
 			);
 			path = UseCase;
-			sourceTree = "<group>";
-		};
-		4386C937268208A7009B4A2D /* DomainModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DomainModel;
 			sourceTree = "<group>";
 		};
 		4386C938268208DA009B4A2D /* DataSource */ = {
@@ -633,6 +628,7 @@
 				B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */,
 				4386C9432682096E009B4A2D /* SearchAppListViewModel.swift in Sources */,
 				B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */,
+				4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ protocol SearchAppListViewModelInput {
 }
 
 protocol SearchAppListViewModelOutput {
-
+	
 }
 
 protocol SearchAppListViewModel {
