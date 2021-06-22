@@ -6,6 +6,8 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 		애니메이션, 사용자 입력 등 UI 관련 처리
 	- Presenter:
 		"ViewModel", View에 의존적이지 않음
+	- Coordinator:
+		ViewController, ViewModel, UseCase 등... 화면단위에서 사용하는 클래스 instance화 / 화면 이동
 	
 	
 2. Domain Layer
@@ -40,3 +42,5 @@ https://medium.com/@justfaceit/clean-architecture%EB%8A%94-%EB%AA%A8%EB%B0%94%EC
 
 
 https://eunjin3786.tistory.com/207
+
+https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-swift-coordinator-pattern-426a7628e2f4
