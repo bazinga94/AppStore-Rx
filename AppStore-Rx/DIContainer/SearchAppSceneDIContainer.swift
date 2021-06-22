@@ -5,7 +5,7 @@
 //  Created by Jongho Lee on 2021/06/22.
 //
 
-import Foundation
+import UIKit
 
 class SearchAppSceneDIContainer {
 	struct Dependency {
@@ -16,5 +16,15 @@ class SearchAppSceneDIContainer {
 
 	init(dependencies: Dependency) {
 		self.dependencies = dependencies
+	}
+
+	func makeSearchAppSceneFlowCoordinator(navigationController: UINavigationController) -> SearchAppSceneFlowCoordinator {
+		return SearchAppSceneFlowCoordinator(dependencies: self, navigationController: navigationController)
+	}
+}
+
+extension SearchAppSceneDIContainer: SearchAppSceneFlowCoordinatorDependency {
+	func makeSearchAppListViewController() -> SearchAppListViewController {
+		return SearchAppListViewController()	// TODO: ViewModel 과 Repository를 inject 해줘야함
 	}
 }

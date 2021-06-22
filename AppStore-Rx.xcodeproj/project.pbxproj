@@ -20,9 +20,11 @@
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B239651226807F1F00432C67 /* SearchAppListViewController.xib */; };
 		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
-		B23965702681AE0F00432C67 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239656F2681AE0F00432C67 /* AppCoordinator.swift */; };
+		B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */; };
 		B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965752681B06300432C67 /* SearchAppSceneDIContainer.swift */; };
 		B239657E2681B1FE00432C67 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239657D2681B1FE00432C67 /* DataTransferService.swift */; };
+		B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965882681B4DB00432C67 /* AppDIContainer.swift */; };
+		B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +68,11 @@
 		B239651126807F1F00432C67 /* SearchAppListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListViewController.swift; sourceTree = "<group>"; };
 		B239651226807F1F00432C67 /* SearchAppListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchAppListViewController.xib; sourceTree = "<group>"; };
 		B239652B2680821900432C67 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		B239656F2681AE0F00432C67 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B23965752681B06300432C67 /* SearchAppSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneDIContainer.swift; sourceTree = "<group>"; };
 		B239657D2681B1FE00432C67 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		B23965882681B4DB00432C67 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneFlowCoordinator.swift; sourceTree = "<group>"; };
 		E42F87DE9BAB5F089476AD44 /* Pods_AppStore_Rx_AppStore_RxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx_AppStore_RxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5321332DB458DFFDFA9A22B /* Pods-AppStore-RxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +208,14 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
+		B23965902681B68500432C67 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		B2619F06267C21FA008B9D0E /* Domain(Business) */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,7 +232,8 @@
 				4377571A267B91DC0000909C /* Assets.xcassets */,
 				4377570E267B91D90000909C /* AppDelegate.swift */,
 				43775710267B91D90000909C /* SceneDelegate.swift */,
-				B239656F2681AE0F00432C67 /* AppCoordinator.swift */,
+				B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */,
+				B23965882681B4DB00432C67 /* AppDIContainer.swift */,
 				4377571F267B91DC0000909C /* Info.plist */,
 			);
 			path = Application;
@@ -247,6 +260,7 @@
 		B2619F0A267C2475008B9D0E /* SearchAppScene */ = {
 			isa = PBXGroup;
 			children = (
+				B23965902681B68500432C67 /* Coordinator */,
 				B2619F0B267C24C6008B9D0E /* SearchAppList */,
 			);
 			path = SearchAppScene;
@@ -557,7 +571,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B23965702681AE0F00432C67 /* AppCoordinator.swift in Sources */,
+				B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */,
 				B239652C2680821900432C67 /* Extensions.swift in Sources */,
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
@@ -565,6 +579,8 @@
 				B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
 				B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */,
+				B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */,
+				B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
