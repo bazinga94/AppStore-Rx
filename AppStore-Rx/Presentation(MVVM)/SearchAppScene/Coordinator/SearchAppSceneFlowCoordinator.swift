@@ -21,5 +21,7 @@ class SearchAppSceneFlowCoordinator {
 	}
 
 	func start() {
+		let vc = dependencies.makeSearchAppListViewController()
+		self.navigationController?.pushViewController(vc, animated: false)
 	}
 }
