@@ -25,6 +25,7 @@ class SearchAppSceneDIContainer {
 
 extension SearchAppSceneDIContainer: SearchAppSceneFlowCoordinatorDependency {
 	func makeSearchAppListViewController() -> SearchAppListViewController {
+		// story board에서 가져와야함
 		return SearchAppListViewController()	// TODO: ViewModel 과 Repository를 inject 해줘야함
 	}
 }

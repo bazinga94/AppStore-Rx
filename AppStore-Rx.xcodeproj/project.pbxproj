@@ -25,6 +25,8 @@
 		B239657E2681B1FE00432C67 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239657D2681B1FE00432C67 /* DataTransferService.swift */; };
 		B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965882681B4DB00432C67 /* AppDIContainer.swift */; };
 		B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */; };
+		B239659D2681D1C100432C67 /* SearchAppListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */; };
+		B23965A22681D46A00432C67 /* SearchAppListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965A12681D46A00432C67 /* SearchAppListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		B239657D2681B1FE00432C67 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		B23965882681B4DB00432C67 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneFlowCoordinator.swift; sourceTree = "<group>"; };
+		B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAppListViewController.storyboard; sourceTree = "<group>"; };
+		B23965A12681D46A00432C67 /* SearchAppListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListTableViewController.swift; sourceTree = "<group>"; };
 		E42F87DE9BAB5F089476AD44 /* Pods_AppStore_Rx_AppStore_RxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx_AppStore_RxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5321332DB458DFFDFA9A22B /* Pods-AppStore-RxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,6 +284,8 @@
 			children = (
 				B239651126807F1F00432C67 /* SearchAppListViewController.swift */,
 				B239651226807F1F00432C67 /* SearchAppListViewController.xib */,
+				B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */,
+				B23965A12681D46A00432C67 /* SearchAppListTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -444,6 +450,7 @@
 				4377571E267B91DC0000909C /* LaunchScreen.storyboard in Resources */,
 				4377571B267B91DC0000909C /* Assets.xcassets in Resources */,
 				B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */,
+				B239659D2681D1C100432C67 /* SearchAppListViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +581,7 @@
 				B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */,
 				B239652C2680821900432C67 /* Extensions.swift in Sources */,
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,
+				B23965A22681D46A00432C67 /* SearchAppListTableViewController.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
 				B239657E2681B1FE00432C67 /* DataTransferService.swift in Sources */,
 				B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */,
