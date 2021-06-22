@@ -18,6 +18,8 @@
 		43775729267B91DC0000909C /* AppStore_RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775728267B91DC0000909C /* AppStore_RxTests.swift */; };
 		43775734267B91DC0000909C /* AppStore_RxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775733267B91DC0000909C /* AppStore_RxUITests.swift */; };
 		4386C9432682096E009B4A2D /* SearchAppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C9422682096E009B4A2D /* SearchAppListViewModel.swift */; };
+		4386C95E2682126F009B4A2D /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C95D2682126F009B4A2D /* Dynamic.swift */; };
+		4386C96826821485009B4A2D /* SearchAppSceneDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */; };
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239651426807F1F00432C67 /* SearchAppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B239651226807F1F00432C67 /* SearchAppListViewController.xib */; };
 		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
@@ -64,6 +66,8 @@
 		43775733267B91DC0000909C /* AppStore_RxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore_RxUITests.swift; sourceTree = "<group>"; };
 		43775735267B91DC0000909C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4386C9422682096E009B4A2D /* SearchAppListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppListViewModel.swift; sourceTree = "<group>"; };
+		4386C95D2682126F009B4A2D /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneDomainModel.swift; sourceTree = "<group>"; };
 		6DFDB46CE89F0EC153067207 /* Pods-AppStore-RxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EB66AE1BD53F634D6CC5D0D /* Pods_AppStore_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBE2E64F1BB4AFE8021E7AB /* Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-Rx-AppStore-RxUITests/Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				B2619F07267C2295008B9D0E /* Application */,
+				4386C96C268215ED009B4A2D /* Resources */,
+				4386C95C26821261009B4A2D /* Utility */,
 				B239652A268081C400432C67 /* Extension */,
 				B23965742681AFDE00432C67 /* DIContainer */,
 				B2619F08267C2372008B9D0E /* Presentation(MVVM) */,
@@ -170,6 +176,7 @@
 		4386C92D268206D7009B4A2D /* Domain(Business) */ = {
 			isa = PBXGroup;
 			children = (
+				4386C96526821443009B4A2D /* DomainModel */,
 				4386C937268208A7009B4A2D /* DomainModel */,
 				4386C935268208A7009B4A2D /* Translator */,
 				4386C936268208A7009B4A2D /* UseCase */,
@@ -229,6 +236,39 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		4386C95C26821261009B4A2D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4386C95D2682126F009B4A2D /* Dynamic.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		4386C96526821443009B4A2D /* DomainModel */ = {
+			isa = PBXGroup;
+			children = (
+				4386C9662682146B009B4A2D /* SearchAppScene */,
+			);
+			path = DomainModel;
+			sourceTree = "<group>";
+		};
+		4386C9662682146B009B4A2D /* SearchAppScene */ = {
+			isa = PBXGroup;
+			children = (
+				4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */,
+			);
+			path = SearchAppScene;
+			sourceTree = "<group>";
+		};
+		4386C96C268215ED009B4A2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4377571A267B91DC0000909C /* Assets.xcassets */,
+				4377571F267B91DC0000909C /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B20D62E146D8FB9DBDD69C64 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,12 +306,10 @@
 		B2619F07267C2295008B9D0E /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				4377571A267B91DC0000909C /* Assets.xcassets */,
 				4377570E267B91D90000909C /* AppDelegate.swift */,
 				43775710267B91D90000909C /* SceneDelegate.swift */,
 				B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */,
 				B23965882681B4DB00432C67 /* AppDIContainer.swift */,
-				4377571F267B91DC0000909C /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -581,9 +619,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4386C95E2682126F009B4A2D /* Dynamic.swift in Sources */,
 				B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */,
 				B239652C2680821900432C67 /* Extensions.swift in Sources */,
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,
+				4386C96826821485009B4A2D /* SearchAppSceneDomainModel.swift in Sources */,
 				B23965A22681D46A00432C67 /* SearchAppListTableViewController.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
 				B239657E2681B1FE00432C67 /* DataTransferService.swift in Sources */,
@@ -763,7 +803,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWC7QPX692;
-				INFOPLIST_FILE = "AppStore-Rx/Application/Info.plist";
+				INFOPLIST_FILE = "AppStore-Rx/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -783,7 +823,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UWC7QPX692;
-				INFOPLIST_FILE = "AppStore-Rx/Application/Info.plist";
+				INFOPLIST_FILE = "AppStore-Rx/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

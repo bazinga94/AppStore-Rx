@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+protocol SearchAppListViewModelInput {
+	func viewDidLoad()
+	func didSearch(query: String)
+}
+
+protocol SearchAppListViewModelOutput {
+
+}
+
+protocol SearchAppListViewModel {
+
+}
