@@ -125,6 +125,7 @@
 				B2619F08267C2372008B9D0E /* Presentation(MVVM) */,
 				B2619F06267C21FA008B9D0E /* Domain(Business) */,
 				B2619F09267C239B008B9D0E /* Data(Repository) */,
+				B2619F12267C25DB008B9D0E /* Network */,
 				4377571C267B91DC0000909C /* LaunchScreen.storyboard */,
 				43775717267B91D90000909C /* AppStore_Rx.xcdatamodeld */,
 			);
@@ -167,11 +168,33 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		B23965672681781000432C67 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		B23965682681782900432C67 /* DomainModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DomainModel;
+			sourceTree = "<group>";
+		};
+		B23965692681783200432C67 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
 		B2619F06267C21FA008B9D0E /* Domain(Business) */ = {
 			isa = PBXGroup;
 			children = (
-				B2619F10267C2554008B9D0E /* Interfaces */,
-				B2619F0F267C2511008B9D0E /* UseCases */,
+				B23965692681783200432C67 /* Translator */,
+				B23965682681782900432C67 /* DomainModel */,
+				B2619F0F267C2511008B9D0E /* UseCase */,
 			);
 			path = "Domain(Business)";
 			sourceTree = "<group>";
@@ -198,9 +221,9 @@
 		B2619F09267C239B008B9D0E /* Data(Repository) */ = {
 			isa = PBXGroup;
 			children = (
-				B2619F0E267C2502008B9D0E /* Entities */,
-				B2619F12267C25DB008B9D0E /* Network */,
-				B2619F11267C2567008B9D0E /* Repositories */,
+				B23965672681781000432C67 /* DataSource */,
+				B2619F0E267C2502008B9D0E /* Entity */,
+				B2619F11267C2567008B9D0E /* Repository */,
 			);
 			path = "Data(Repository)";
 			sourceTree = "<group>";
@@ -238,32 +261,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		B2619F0E267C2502008B9D0E /* Entities */ = {
+		B2619F0E267C2502008B9D0E /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Entities;
+			path = Entity;
 			sourceTree = "<group>";
 		};
-		B2619F0F267C2511008B9D0E /* UseCases */ = {
+		B2619F0F267C2511008B9D0E /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = UseCases;
+			path = UseCase;
 			sourceTree = "<group>";
 		};
-		B2619F10267C2554008B9D0E /* Interfaces */ = {
+		B2619F11267C2567008B9D0E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		B2619F11267C2567008B9D0E /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		B2619F12267C25DB008B9D0E /* Network */ = {
