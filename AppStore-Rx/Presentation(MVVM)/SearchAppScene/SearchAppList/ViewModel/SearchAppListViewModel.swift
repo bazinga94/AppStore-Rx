@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol SearchAppListViewModelInput {
 	func viewDidLoad()
@@ -13,9 +14,20 @@ protocol SearchAppListViewModelInput {
 }
 
 protocol SearchAppListViewModelOutput {
-	
+	var homeModelObservable: Observable<[AppInfoList]> { get }
 }
 
-protocol SearchAppListViewModel {
+class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewModelOutput {
+	var homeModelObservable: Observable<[AppInfoList]>
 
+	init() {
+		self.homeModelObservable = Observable.of([])
+	}
+
+	func viewDidLoad() {
+	}
+
+	func didSearch(query: String) {
+
+	}
 }
