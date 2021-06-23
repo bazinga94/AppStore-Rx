@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol SearchAppListViewModelInput {
 	func viewDidLoad()
@@ -18,13 +19,13 @@ protocol SearchAppListViewModelOutput {
 }
 
 class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewModelOutput {
-	var homeModelObservable: Observable<AppInfoList>
+	var appInfoListObservable: Observable<AppInfoList>
 	private let searchAppListUseCase: SearchAppListUseCase
 	private var searchAppLoadTask: Cancellable? { willSet { searchAppLoadTask?.cancel() } }
 
 	init(searchAppListUseCase: SearchAppListUseCase) {
 		self.searchAppListUseCase = searchAppListUseCase
-		self.homeModelObservable = Observable.of()
+		self.appInfoListObservable = Observable.of()
 	}
 
 	func viewDidLoad() {
@@ -35,7 +36,7 @@ class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewMode
 		searchAppLoadTask = searchAppListUseCase.execute(requestModel: requestModel) { [weak self] (result: Result<AppInfoList, Error>) in
 			switch result {
 				case .success(let model):
-					self?.homeModelObservable = Observable.of(model)
+					self?.appInfoListObservable = Observable.of(model)
 				case .failure(let error):
 					print(error)	// TODO: - Error Handling 필요
 			}

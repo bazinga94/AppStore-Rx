@@ -26,6 +26,7 @@
 		4388B2EA268383510007EB30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2E9268383510007EB30 /* NetworkService.swift */; };
 		4388B2FB268388C50007EB30 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2FA268388C50007EB30 /* ApiConfig.swift */; };
 		4388B30026838C660007EB30 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2FF26838C660007EB30 /* RepositoryTask.swift */; };
+		4388B311268394160007EB30 /* SearchAppListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B310268394160007EB30 /* SearchAppListTableViewCell.swift */; };
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
 		B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */; };
@@ -80,6 +81,7 @@
 		4388B2E9268383510007EB30 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		4388B2FA268388C50007EB30 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		4388B2FF26838C660007EB30 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
+		4388B310268394160007EB30 /* SearchAppListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListTableViewCell.swift; sourceTree = "<group>"; };
 		6DFDB46CE89F0EC153067207 /* Pods-AppStore-RxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EB66AE1BD53F634D6CC5D0D /* Pods_AppStore_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBE2E64F1BB4AFE8021E7AB /* Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-Rx-AppStore-RxUITests/Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				B239651126807F1F00432C67 /* SearchAppListViewController.swift */,
 				B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */,
 				B23965A12681D46A00432C67 /* SearchAppListTableViewController.swift */,
+				4388B310268394160007EB30 /* SearchAppListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				B23965CA268326E700432C67 /* AppInfoListStorage.swift in Sources */,
 				4386C98E2682291C009B4A2D /* AppInfoListRepository.swift in Sources */,
 				4386C9862682290D009B4A2D /* SearchAppListUseCase.swift in Sources */,
+				4388B311268394160007EB30 /* SearchAppListTableViewCell.swift in Sources */,
 				B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */,
 				B239652C2680821900432C67 /* Extensions.swift in Sources */,
 				4377570F267B91D90000909C /* AppDelegate.swift in Sources */,

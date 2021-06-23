@@ -12,6 +12,7 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 	@IBOutlet weak var searchBar: UISearchBar!
 
 	private var viewModel: SearchAppListViewModel!
+	private var searchAppListTableViewController: SearchAppListTableViewController?
 //	private var appInfoListRepository: AppInfoListRepository?
 
 	static func create(with viewModel: SearchAppListViewModel) -> SearchAppListViewController {
@@ -19,6 +20,14 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 		vc.viewModel = viewModel
 //		vc.appInfoListRepository = appInfoListRepository
 		return vc
+	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == String(describing: SearchAppListTableViewController.self),
+		   let destinationVC = segue.destination as? SearchAppListTableViewController {
+			searchAppListTableViewController = destinationVC
+			searchAppListTableViewController?.viewModel = viewModel
+		}
 	}
 
 	override func viewDidLoad() {
