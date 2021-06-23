@@ -18,9 +18,11 @@ protocol SearchAppListViewModelOutput {
 }
 
 class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewModelOutput {
-	var homeModelObservable: Observable<[AppInfoList]>
+	let homeModelObservable: Observable<[AppInfoList]>
+	private let searchAppListUseCase: SearchAppListUseCase
 
-	init() {
+	init(searchAppListUseCase: SearchAppListUseCase) {
+		self.searchAppListUseCase = searchAppListUseCase
 		self.homeModelObservable = Observable.of([])
 	}
 

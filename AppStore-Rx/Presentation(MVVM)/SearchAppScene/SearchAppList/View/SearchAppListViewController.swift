@@ -11,6 +11,16 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 
 	@IBOutlet weak var searchBar: UISearchBar!
 
+	private var viewModel: SearchAppListViewModel!
+//	private var appInfoListRepository: AppInfoListRepository?
+
+	static func create(with viewModel: SearchAppListViewModel) -> SearchAppListViewController {
+		let vc = SearchAppListViewController.instantiateViewController()
+		vc.viewModel = viewModel
+//		vc.appInfoListRepository = appInfoListRepository
+		return vc
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		configureSearchBar()

@@ -22,7 +22,7 @@
 		4386C96826821485009B4A2D /* SearchAppSceneDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */; };
 		4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */; };
 		4386C9862682290D009B4A2D /* SearchAppListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C9852682290D009B4A2D /* SearchAppListUseCase.swift */; };
-		4386C98E2682291C009B4A2D /* SearchAppListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C98D2682291C009B4A2D /* SearchAppListRepository.swift */; };
+		4386C98E2682291C009B4A2D /* AppInfoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */; };
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
 		B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */; };
@@ -73,7 +73,7 @@
 		4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneDomainModel.swift; sourceTree = "<group>"; };
 		4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppInfoListResponse+Mapping.swift"; sourceTree = "<group>"; };
 		4386C9852682290D009B4A2D /* SearchAppListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListUseCase.swift; sourceTree = "<group>"; };
-		4386C98D2682291C009B4A2D /* SearchAppListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListRepository.swift; sourceTree = "<group>"; };
+		4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListRepository.swift; sourceTree = "<group>"; };
 		6DFDB46CE89F0EC153067207 /* Pods-AppStore-RxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EB66AE1BD53F634D6CC5D0D /* Pods_AppStore_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBE2E64F1BB4AFE8021E7AB /* Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-Rx-AppStore-RxUITests/Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		4386C9342682073E009B4A2D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				4386C98D2682291C009B4A2D /* SearchAppListRepository.swift */,
+				4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -621,7 +621,7 @@
 			files = (
 				4386C95E2682126F009B4A2D /* Dynamic.swift in Sources */,
 				B23965CA268326E700432C67 /* AppInfoListStorage.swift in Sources */,
-				4386C98E2682291C009B4A2D /* SearchAppListRepository.swift in Sources */,
+				4386C98E2682291C009B4A2D /* AppInfoListRepository.swift in Sources */,
 				4386C9862682290D009B4A2D /* SearchAppListUseCase.swift in Sources */,
 				B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */,
 				B239652C2680821900432C67 /* Extensions.swift in Sources */,

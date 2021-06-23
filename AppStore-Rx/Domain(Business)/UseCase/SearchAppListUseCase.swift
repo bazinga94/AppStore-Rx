@@ -11,7 +11,20 @@ struct SearchAppListUseCaseRequestModel {
 	var query: String
 }
 
-protocol SearchAppListUseCase {
+protocol SearchAppListUseCaseProtocol {
 	func execute(requestModel: SearchAppListUseCaseRequestModel,
 				 completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable?
+}
+
+class SearchAppListUseCase: SearchAppListUseCaseProtocol {
+
+	private let appInfoListRepository: AppInfoListRepository
+
+	init(appInfoListRepository: AppInfoListRepository) {
+		self.appInfoListRepository = appInfoListRepository
+	}
+
+	func execute(requestModel: SearchAppListUseCaseRequestModel, completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
+		return appInfoListRepository.fetchAppInfoList(query: AppInfoListQuery(query: requestModel.query), completion: completion)
+	}
 }
