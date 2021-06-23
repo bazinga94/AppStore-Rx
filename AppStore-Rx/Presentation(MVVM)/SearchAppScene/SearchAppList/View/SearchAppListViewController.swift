@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 
 	@IBOutlet weak var searchBar: UISearchBar!
+	@IBOutlet weak var tableView: UITableView!
 
 	private var viewModel: SearchAppListViewModel!
-	private var searchAppListTableViewController: SearchAppListTableViewController?
+	private var bag = DisposeBag()
 //	private var appInfoListRepository: AppInfoListRepository?
 
 	static func create(with viewModel: SearchAppListViewModel) -> SearchAppListViewController {
@@ -22,18 +25,14 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 		return vc
 	}
 
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == String(describing: SearchAppListTableViewController.self),
-		   let destinationVC = segue.destination as? SearchAppListTableViewController {
-			searchAppListTableViewController = destinationVC
-			searchAppListTableViewController?.viewModel = viewModel
-		}
-	}
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		viewModel.viewDidLoad()
 		configureSearchBar()
+		self.viewModel.appInfoListObservable.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
+			cell.iconImageView.load(url: element.appIconImageUrl)
+		}
+		.disposed(by: bag)
 	}
 
 	/// searchBar 속성 구성
