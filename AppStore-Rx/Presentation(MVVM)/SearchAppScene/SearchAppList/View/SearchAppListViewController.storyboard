@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="-4.3478260869565224" y="-222.32142857142856"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Search App List Table View Controller-->
         <scene sceneID="3ca-DO-TCv">
             <objects>
-                <tableViewController id="qHR-1I-9Jd" sceneMemberID="viewController">
+                <tableViewController id="qHR-1I-9Jd" customClass="SearchAppListTableViewController" customModule="AppStore_Rx" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Us-dm-wcV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
