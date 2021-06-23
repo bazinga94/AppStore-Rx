@@ -32,6 +32,7 @@
 		B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */; };
 		B239659D2681D1C100432C67 /* SearchAppListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */; };
 		B23965A22681D46A00432C67 /* SearchAppListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965A12681D46A00432C67 /* SearchAppListTableViewController.swift */; };
+		B23965CA268326E700432C67 /* AppInfoListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965C9268326E700432C67 /* AppInfoListStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneFlowCoordinator.swift; sourceTree = "<group>"; };
 		B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAppListViewController.storyboard; sourceTree = "<group>"; };
 		B23965A12681D46A00432C67 /* SearchAppListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListTableViewController.swift; sourceTree = "<group>"; };
+		B23965C9268326E700432C67 /* AppInfoListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListStorage.swift; sourceTree = "<group>"; };
 		E42F87DE9BAB5F089476AD44 /* Pods_AppStore_Rx_AppStore_RxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx_AppStore_RxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5321332DB458DFFDFA9A22B /* Pods-AppStore-RxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +300,7 @@
 		B23965C82682ECE700432C67 /* NonPersistentStorage */ = {
 			isa = PBXGroup;
 			children = (
+				B23965C9268326E700432C67 /* AppInfoListStorage.swift */,
 			);
 			path = NonPersistentStorage;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4386C95E2682126F009B4A2D /* Dynamic.swift in Sources */,
+				B23965CA268326E700432C67 /* AppInfoListStorage.swift in Sources */,
 				4386C98E2682291C009B4A2D /* SearchAppListRepository.swift in Sources */,
 				4386C9862682290D009B4A2D /* SearchAppListUseCase.swift in Sources */,
 				B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */,
