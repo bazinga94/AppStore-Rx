@@ -13,7 +13,7 @@ struct SearchAppListUseCaseRequestModel {
 
 protocol SearchAppListUseCaseProtocol {
 	func execute(requestModel: SearchAppListUseCaseRequestModel,
-				 completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable?
+				 completion: @escaping (Result<AppInfoList, Error>) -> Void) -> Cancellable?
 }
 
 class SearchAppListUseCase: SearchAppListUseCaseProtocol {
@@ -24,7 +24,7 @@ class SearchAppListUseCase: SearchAppListUseCaseProtocol {
 		self.appInfoListRepository = appInfoListRepository
 	}
 
-	func execute(requestModel: SearchAppListUseCaseRequestModel, completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
+	func execute(requestModel: SearchAppListUseCaseRequestModel, completion: @escaping (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
 		return appInfoListRepository.fetchAppInfoList(query: AppInfoListQuery(query: requestModel.query), completion: completion)
 	}
 }

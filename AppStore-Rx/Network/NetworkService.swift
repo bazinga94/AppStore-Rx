@@ -17,7 +17,6 @@ protocol NetworkCancellable {
 
 extension URLSessionTask: NetworkCancellable { }
 
-
 enum APIError: Error {
 	case unknown
 	case httpStatus
@@ -31,6 +30,6 @@ enum HttpMethod: String {
 	case POST
 }
 
-protocol NetworkProtocol {
-	func fetchRequest<T: Decodable>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> Cancellable?
-}
+//protocol NetworkProtocol {
+//	func fetchRequest<T: Decodable>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> NetworkCancellable?
+//}

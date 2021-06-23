@@ -7,7 +7,9 @@
 
 import Foundation
 
-protocol DataTransferService: NetworkProtocol {
+//protocol DataTransferService: NetworkProtocol {
+protocol DataTransferService {
+	func request<T: Decodable>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> NetworkCancellable?
 }
 
 class SearchAppDataTransferService: DataTransferService {
@@ -18,7 +20,7 @@ class SearchAppDataTransferService: DataTransferService {
 		self.session = session
 	}
 
-	func fetchRequest<T>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> Cancellable? where T : Decodable {
+	func request<T>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> NetworkCancellable? where T : Decodable {
 		var request = URLRequest(url: url)
 		request.httpMethod = type.rawValue
 
@@ -39,5 +41,6 @@ class SearchAppDataTransferService: DataTransferService {
 				return completion(.success(model))
 			}
 		task.resume()
+		return task
 	}
 }
