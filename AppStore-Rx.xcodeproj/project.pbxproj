@@ -189,6 +189,7 @@
 		4386C9312682070E009B4A2D /* Data(Repository) */ = {
 			isa = PBXGroup;
 			children = (
+				B23965C82682ECE700432C67 /* NonPersistentStorage */,
 				4386C938268208DA009B4A2D /* DataSource */,
 				4386C9342682073E009B4A2D /* Repository */,
 				4386C93326820736009B4A2D /* Entity */,
@@ -292,6 +293,13 @@
 				B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B23965C82682ECE700432C67 /* NonPersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NonPersistentStorage;
 			sourceTree = "<group>";
 		};
 		B2619F07267C2295008B9D0E /* Application */ = {
