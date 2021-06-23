@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol AppInfoListRepository {
+	func fetchAppInfoList(query: AppInfoListQuery,
+						  completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable?
+}

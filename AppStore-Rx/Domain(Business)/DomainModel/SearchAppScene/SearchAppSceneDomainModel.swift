@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct AppInfoListQuery {
+	var query: String
+}
+
 struct AppInfoList {
 	let displayedApps: [AppInfo]
 	let totalCount: Int

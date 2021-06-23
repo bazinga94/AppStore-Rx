@@ -7,6 +7,10 @@
 
 import Foundation
 
+public protocol Cancellable {
+	func cancel()
+}
+
 protocol DataTransferService {
 }
 

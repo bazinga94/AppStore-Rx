@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct SearchAppListUseCaseRequestModel {
+	var query: String
+}
+
+protocol SearchAppListUseCase {
+	func execute(requestModel: SearchAppListUseCaseRequestModel,
+				 completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable?
+}
