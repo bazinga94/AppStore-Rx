@@ -23,11 +23,12 @@
 		4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */; };
 		4386C9862682290D009B4A2D /* SearchAppListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C9852682290D009B4A2D /* SearchAppListUseCase.swift */; };
 		4386C98E2682291C009B4A2D /* AppInfoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */; };
+		4388B2EA268383510007EB30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2E9268383510007EB30 /* NetworkService.swift */; };
 		B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239651126807F1F00432C67 /* SearchAppListViewController.swift */; };
 		B239652C2680821900432C67 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239652B2680821900432C67 /* Extensions.swift */; };
 		B23965702681AE0F00432C67 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */; };
 		B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965752681B06300432C67 /* SearchAppSceneDIContainer.swift */; };
-		B239657E2681B1FE00432C67 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239657D2681B1FE00432C67 /* DataTransferService.swift */; };
+		B239657E2681B1FE00432C67 /* SearchAppDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B239657D2681B1FE00432C67 /* SearchAppDataTransferService.swift */; };
 		B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965882681B4DB00432C67 /* AppDIContainer.swift */; };
 		B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */; };
 		B239659D2681D1C100432C67 /* SearchAppListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */; };
@@ -74,6 +75,7 @@
 		4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppInfoListResponse+Mapping.swift"; sourceTree = "<group>"; };
 		4386C9852682290D009B4A2D /* SearchAppListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListUseCase.swift; sourceTree = "<group>"; };
 		4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListRepository.swift; sourceTree = "<group>"; };
+		4388B2E9268383510007EB30 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		6DFDB46CE89F0EC153067207 /* Pods-AppStore-RxTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.debug.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EB66AE1BD53F634D6CC5D0D /* Pods_AppStore_Rx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBE2E64F1BB4AFE8021E7AB /* Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-Rx-AppStore-RxUITests/Pods-AppStore-Rx-AppStore-RxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,7 +85,7 @@
 		B239652B2680821900432C67 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B239656F2681AE0F00432C67 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B23965752681B06300432C67 /* SearchAppSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneDIContainer.swift; sourceTree = "<group>"; };
-		B239657D2681B1FE00432C67 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		B239657D2681B1FE00432C67 /* SearchAppDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppDataTransferService.swift; sourceTree = "<group>"; };
 		B23965882681B4DB00432C67 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		B23965912681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneFlowCoordinator.swift; sourceTree = "<group>"; };
 		B239659C2681D1C100432C67 /* SearchAppListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchAppListViewController.storyboard; sourceTree = "<group>"; };
@@ -363,7 +365,8 @@
 		B2619F12267C25DB008B9D0E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B239657D2681B1FE00432C67 /* DataTransferService.swift */,
+				B239657D2681B1FE00432C67 /* SearchAppDataTransferService.swift */,
+				4388B2E9268383510007EB30 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -629,11 +632,12 @@
 				4386C96826821485009B4A2D /* SearchAppSceneDomainModel.swift in Sources */,
 				B23965A22681D46A00432C67 /* SearchAppListTableViewController.swift in Sources */,
 				43775711267B91D90000909C /* SceneDelegate.swift in Sources */,
-				B239657E2681B1FE00432C67 /* DataTransferService.swift in Sources */,
+				B239657E2681B1FE00432C67 /* SearchAppDataTransferService.swift in Sources */,
 				B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
 				B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */,
 				B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */,
+				4388B2EA268383510007EB30 /* NetworkService.swift in Sources */,
 				4386C9432682096E009B4A2D /* SearchAppListViewModel.swift in Sources */,
 				B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */,
 				4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */,

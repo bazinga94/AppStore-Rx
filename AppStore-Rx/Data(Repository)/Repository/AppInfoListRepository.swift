@@ -21,6 +21,6 @@ class AppInfoListRepository: AppInfoListRepositoryProtocol {
 	}
 
 	func fetchAppInfoList(query: AppInfoListQuery, completion: (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
-		return nil
+		return fetch
 	}
 }
