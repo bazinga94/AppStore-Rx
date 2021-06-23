@@ -23,6 +23,7 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		viewModel.viewDidLoad()
 		configureSearchBar()
 	}
 
@@ -41,6 +42,6 @@ extension SearchAppListViewController: UISearchBarDelegate {
 		searchBar.resignFirstResponder()
 		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
 		if searchText.count == 0 { return }
-		// TODO: ViewModel 로직
+		viewModel.didSearch(query: searchText)
 	}
 }
