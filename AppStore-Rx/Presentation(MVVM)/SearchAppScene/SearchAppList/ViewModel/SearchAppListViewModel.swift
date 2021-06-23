@@ -14,22 +14,31 @@ protocol SearchAppListViewModelInput {
 }
 
 protocol SearchAppListViewModelOutput {
-	var homeModelObservable: Observable<[AppInfoList]> { get }
+	var homeModelObservable: Observable<AppInfoList> { get }
 }
 
 class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewModelOutput {
-	let homeModelObservable: Observable<[AppInfoList]>
+	var homeModelObservable: Observable<AppInfoList>
 	private let searchAppListUseCase: SearchAppListUseCase
+	private var searchAppLoadTask: Cancellable? { willSet { searchAppLoadTask?.cancel() } }
 
 	init(searchAppListUseCase: SearchAppListUseCase) {
 		self.searchAppListUseCase = searchAppListUseCase
-		self.homeModelObservable = Observable.of([])
+		self.homeModelObservable = Observable.of()
 	}
 
 	func viewDidLoad() {
 	}
 
 	func didSearch(query: String) {
-
+		let requestModel = SearchAppListUseCaseRequestModel(query: query)
+		searchAppLoadTask = searchAppListUseCase.execute(requestModel: requestModel) { [weak self] (result: Result<AppInfoList, Error>) in
+			switch result {
+				case .success(let model):
+					self?.homeModelObservable = Observable.of(model)
+				case .failure(let error):
+					print(error)	// TODO: - Error Handling 필요
+			}
+		}
 	}
 }
