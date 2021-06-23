@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="slC-1p-xqe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +11,7 @@
         <!--Search App List View Controller-->
         <scene sceneID="jpH-IO-HI6">
             <objects>
-                <viewController id="slC-1p-xqe" customClass="SearchAppListViewController" customModule="AppStore_Rx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="slC-1p-xqe" customClass="SearchAppListViewController" customModule="AppStore_Rx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xze-3p-gLC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,9 +24,19 @@
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JHt-9r-i8F">
                                 <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eud-Xs-XHt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="eud-Xs-XHt" firstAttribute="leading" secondItem="JHt-9r-i8F" secondAttribute="leading" id="UkX-3e-AYO"/>
+                                    <constraint firstItem="eud-Xs-XHt" firstAttribute="top" secondItem="JHt-9r-i8F" secondAttribute="top" id="g8g-6t-6ee"/>
+                                    <constraint firstAttribute="bottom" secondItem="eud-Xs-XHt" secondAttribute="bottom" id="hlJ-8f-hX4"/>
                                     <constraint firstAttribute="height" constant="60" id="pqa-Iu-QHN"/>
+                                    <constraint firstAttribute="trailing" secondItem="eud-Xs-XHt" secondAttribute="trailing" id="ygb-BE-c8q"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -42,6 +52,9 @@
                             <constraint firstItem="AyB-as-3xf" firstAttribute="top" secondItem="JHt-9r-i8F" secondAttribute="bottom" id="gkZ-Sz-UV0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="eud-Xs-XHt" id="tU2-gi-STh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHM-i9-IFr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
