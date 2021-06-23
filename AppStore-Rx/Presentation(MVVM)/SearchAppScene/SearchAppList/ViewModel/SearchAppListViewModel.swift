@@ -15,11 +15,11 @@ protocol SearchAppListViewModelInput {
 }
 
 protocol SearchAppListViewModelOutput {
-	var homeModelObservable: Observable<AppInfoList> { get }
+	var appInfoListObservable: Observable<[AppInfo]> { get }
 }
 
 class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewModelOutput {
-	var appInfoListObservable: Observable<AppInfoList>
+	var appInfoListObservable: Observable<[AppInfo]>
 	private let searchAppListUseCase: SearchAppListUseCase
 	private var searchAppLoadTask: Cancellable? { willSet { searchAppLoadTask?.cancel() } }
 
@@ -36,7 +36,7 @@ class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewMode
 		searchAppLoadTask = searchAppListUseCase.execute(requestModel: requestModel) { [weak self] (result: Result<AppInfoList, Error>) in
 			switch result {
 				case .success(let model):
-					self?.appInfoListObservable = Observable.of(model)
+					self?.appInfoListObservable = Observable.of(model.displayedApps)
 				case .failure(let error):
 					print(error)	// TODO: - Error Handling 필요
 			}

@@ -6,22 +6,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchAppListTableViewController: UITableViewController {
 
 	var viewModel: SearchAppListViewModel!
+	private var bag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.viewModel.appInfoListObservable.bind(to: tableView.rx.items(cellIdentifier: <#T##String#>))
+		self.viewModel.appInfoListObservable.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
+			cell.iconImageView.load(url: element.appIconImageUrl)
+		}
+		.disposed(by: bag)
 
-//		self.viewModel?.homeModelObservable?.bind(to: tableView.rx.items(cellIdentifier: HomeTableViewCell.className, cellType: HomeTableViewCell.self)) { row, element, cell in
-//			cell.titleLabel.text = element.homeTitle
-//			cell.contentLabel.text = element.homeContent
-//			cell.dateLabel.text = element.date.dateToString("yyyy.MM.dd HH:mm:ss")
-//		}
-//		.disposed(by: bag)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
