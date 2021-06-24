@@ -56,11 +56,11 @@ extension AppInfoListDTO.AppInfoDTO {
 	func toDomain() -> AppInfo {
 		return AppInfo(appIconImageUrl: artworkUrl512,
 					   appName: trackName,
-					   appGenre: genres[0],
+					   appGenre: genres[safe: 0] ?? "",
 					   numberOfReviews: String(userRatingCount),
-					   firstScreenShotUrl: screenshotUrls[0],
-					   secondScreenShotUrl: screenshotUrls[1],
-					   thirdScreenShotUrl: screenshotUrls[2],
+					   firstScreenShotUrl: screenshotUrls[safe: 0] ?? "",
+					   secondScreenShotUrl: screenshotUrls[safe: 1] ?? "",
+					   thirdScreenShotUrl: screenshotUrls[safe: 2] ?? "",
 					   averageUserRating: averageUserRating)
 	}
 }
