@@ -40,7 +40,7 @@ class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewMode
 					case .success(let model):
 //						self?.appInfoListObservable = Observable.of(model.displayedApps)
 						emitter.onNext(model.displayedApps)
-						emitter.onCompleted()
+//						emitter.onCompleted()
 					case .failure(let error):
 						print(error)	// TODO: - Error Handling 필요
 				}
