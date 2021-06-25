@@ -29,11 +29,11 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 		viewModel.viewDidLoad()
 		configureSearchBar()
 
-//		self.tableView.rx.setDelegate(self).disposed(by: bag)
-//		self.viewModel.appInfoListObservable.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
-//			cell.iconImageView.load(url: element.appIconImageUrl)
-//		}
-//		.disposed(by: bag)
+		self.tableView.rx.setDelegate(self).disposed(by: bag)
+		self.viewModel.appInfoListObservable.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
+			cell.iconImageView.load(url: element.appIconImageUrl)
+		}
+		.disposed(by: bag)
 	}
 
 	/// searchBar 속성 구성
