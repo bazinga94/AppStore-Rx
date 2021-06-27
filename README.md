@@ -17,6 +17,7 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 		앱에서 사용하는 실질적인 데이터(display model)
 	- Translator:
 		Entity <-> Domain Model 변환, ViewModel에서 사용할 format으로
+		Model의 extension으로 mapper를 구현하여 필요 없을듯
 	
 	
 3. Data Layer
