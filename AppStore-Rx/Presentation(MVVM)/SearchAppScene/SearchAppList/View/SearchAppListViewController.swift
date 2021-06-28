@@ -68,29 +68,9 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 extension SearchAppListViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
-//		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-//		if searchText.count == 0 { return }
-//		viewModel.didSearch(query: searchText)
-//			.observe(on: MainScheduler.instance)
-//			.subscribe(onNext: { [weak self] appInfoList in //, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-//				if appInfoList.count == 0 { return }
-//				self?.imageView.load(url: appInfoList[0].appIconImageUrl)
-//				self?.tableView.reloadData()
-//			})
-//			.disposed(by: bag)
 	}
 
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-//		if searchText.count == 0 { return }
-//		viewModel.didSearch(query: searchText)
-//			.observe(on: MainScheduler.instance)
-//			.subscribe(onNext: { [weak self] appInfoList in //, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-//				if appInfoList.count == 0 { return }
-//				self?.imageView.load(url: appInfoList[0].appIconImageUrl)
-//				self?.tableView.reloadData()
-//			})
-//			.disposed(by: bag)
 	}
 }
 
