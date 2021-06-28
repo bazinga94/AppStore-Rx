@@ -28,12 +28,21 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 		super.viewDidLoad()
 		viewModel.viewDidLoad()
 		configureSearchBar()
+		bindViewModel()
+	}
 
+	private func bindViewModel() {
 		self.tableView.rx.setDelegate(self).disposed(by: bag)
-		self.viewModel.appInfoListObservable.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
-			cell.iconImageView.load(url: element.appIconImageUrl)
-		}
-		.disposed(by: bag)
+
+		searchBar.rx.text.asObservable()
+			.compactMap{ $0?.lowercased() }
+			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in
+				return self.viewModel.didSearch(query: query)
+			}
+			.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
+				cell.iconImageView.load(url: element.appIconImageUrl)
+			}
+			.disposed(by: bag)
 	}
 
 	/// searchBar 속성 구성
@@ -49,28 +58,29 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 extension SearchAppListViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
-		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-		if searchText.count == 0 { return }
-		viewModel.didSearch(query: searchText)
-			.observe(on: MainScheduler.instance)
-			.subscribe(onNext: { [weak self] appInfoList in //, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-				if appInfoList.count == 0 { return }
-				self?.imageView.load(url: appInfoList[0].appIconImageUrl)
-			})
-			.disposed(by: bag)
+//		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+//		if searchText.count == 0 { return }
+//		viewModel.didSearch(query: searchText)
+//			.observe(on: MainScheduler.instance)
+//			.subscribe(onNext: { [weak self] appInfoList in //, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+//				if appInfoList.count == 0 { return }
+//				self?.imageView.load(url: appInfoList[0].appIconImageUrl)
+//				self?.tableView.reloadData()
+//			})
+//			.disposed(by: bag)
 	}
 
 	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
-		if searchText.count == 0 { return }
-		viewModel.didSearch(query: searchText)
-			.observe(on: MainScheduler.instance)
-			.subscribe(onNext: { [weak self] appInfoList in //, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-				if appInfoList.count == 0 { return }
-				self?.imageView.load(url: appInfoList[0].appIconImageUrl)
-			})
-			.disposed(by: bag)
-
+//		guard let searchText = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+//		if searchText.count == 0 { return }
+//		viewModel.didSearch(query: searchText)
+//			.observe(on: MainScheduler.instance)
+//			.subscribe(onNext: { [weak self] appInfoList in //, onError: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>, onCompleted: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>, onDisposed: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+//				if appInfoList.count == 0 { return }
+//				self?.imageView.load(url: appInfoList[0].appIconImageUrl)
+//				self?.tableView.reloadData()
+//			})
+//			.disposed(by: bag)
 	}
 }
 
