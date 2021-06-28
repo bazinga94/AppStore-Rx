@@ -28,6 +28,7 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 		super.viewDidLoad()
 		viewModel.viewDidLoad()
 		configureSearchBar()
+		configureTableView()
 		bindViewModel()
 	}
 
@@ -52,6 +53,11 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 		searchBar.searchBarStyle = .minimal
 		searchBar.searchTextField.textColor = .lightGray
 		searchBar.searchTextField.leftView?.tintColor = .lightGray
+	}
+
+	/// tableView 속성 구성
+	private func configureTableView() {
+		tableView.estimatedRowHeight = 200
 	}
 }
 
