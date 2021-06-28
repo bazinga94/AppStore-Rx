@@ -33,9 +33,13 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 	}
 
 	private func bindViewModel() {
-		self.tableView.rx.setDelegate(self).disposed(by: bag)
+		tableView.rx
+			.setDelegate(self)
+			.disposed(by: bag)
 
-		searchBar.rx.text.asObservable()
+		searchBar.rx
+			.text
+			.asObservable()
 			.compactMap{ $0?.lowercased() }
 			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in
 				return self.viewModel.didSearch(query: query)
