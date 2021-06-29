@@ -43,11 +43,29 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 			.compactMap{ $0?.lowercased() }
 			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in
 				return self.viewModel.didSearch(query: query)
+//					.catch { error -> Observable<[AppInfo]> in
+//						print(error)
+//						return Observable.of([])
+//					}
 			}
+//			.catch({ (error) -> Observable<[AppInfo]> in
+//				print(error)
+//				return Observable.of([])
+//			})
 			.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
 				cell.iconImageView.load(url: element.appIconImageUrl)
-			}
+			}	// bind는 onError로 넘어오는 error를 컨트롤 하지 못함
 			.disposed(by: bag)
+
+//		appInfoListObservable
+//			.subscribe(onError: {
+//				print($0)
+//			}, onCompleted: {
+//				print("completed")
+//			}, onDisposed: {
+//				print("disposed")
+//			})
+//			.disposed(by: bag)
 	}
 
 	/// searchBar 속성 구성

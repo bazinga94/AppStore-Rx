@@ -43,9 +43,11 @@ class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewMode
 				switch result {
 					case .success(let model):
 						emitter.onNext(model.displayedApps)
+						emitter.onCompleted()
 //						print(model)
 					case .failure(let error):
-						print(error)	// TODO: - Error Handling 필요
+						emitter.onError(error)
+//						print(error)	// TODO: - Error Handling 필요
 				}
 			}
 
