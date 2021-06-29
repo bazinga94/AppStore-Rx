@@ -9,7 +9,8 @@ import Foundation
 
 class AppDIContainer {
 
-	lazy var apiDataTransferService: DataTransferService = {
+	// MARK: - Network
+	lazy var apiDataTransferService: NetworkManagerProtocol = {
 		return SearchAppDataTransferService()
 	}()
 

@@ -7,12 +7,7 @@
 
 import Foundation
 
-//protocol DataTransferService: NetworkProtocol {
-protocol DataTransferService {
-	func request<T: Decodable>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> NetworkCancellable?
-}
-
-class SearchAppDataTransferService: DataTransferService {
+class SearchAppDataTransferService: NetworkManagerProtocol {
 
 	var session: URLSession
 

@@ -9,7 +9,7 @@ import UIKit
 
 class SearchAppSceneDIContainer {
 	struct Dependency {
-		let apiDataTransferService: DataTransferService
+		let apiDataTransferService: NetworkManagerProtocol
 	}
 
 	private let dependencies: Dependency

@@ -30,6 +30,6 @@ enum HttpMethod: String {
 	case POST
 }
 
-//protocol NetworkProtocol {
-//	func fetchRequest<T: Decodable>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> NetworkCancellable?
-//}
+protocol NetworkManagerProtocol {
+	func request<T: Decodable>(url: URL, type: HttpMethod, completion: @escaping (Result<T, APIError>) -> Void) -> NetworkCancellable?
+}

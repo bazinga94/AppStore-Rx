@@ -15,10 +15,10 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var imageView: UIImageView!
 
-	private var viewModel: SearchAppListViewModel!
+	private var viewModel: SearchAppListViewModelProtocol!
 	private var bag = DisposeBag()
 
-	static func create(with viewModel: SearchAppListViewModel) -> SearchAppListViewController {
+	static func create(with viewModel: SearchAppListViewModelProtocol) -> SearchAppListViewController {
 		let vc = SearchAppListViewController.instantiateViewController()
 		vc.viewModel = viewModel
 		return vc

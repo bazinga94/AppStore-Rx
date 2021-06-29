@@ -14,9 +14,9 @@ protocol AppInfoListRepositoryProtocol {
 
 class AppInfoListRepository: AppInfoListRepositoryProtocol {
 
-	private let dataTransferService: DataTransferService
+	private let dataTransferService: NetworkManagerProtocol
 
-	init(dataTransferService: DataTransferService) {
+	init(dataTransferService: NetworkManagerProtocol) {
 		self.dataTransferService = dataTransferService
 	}
 
