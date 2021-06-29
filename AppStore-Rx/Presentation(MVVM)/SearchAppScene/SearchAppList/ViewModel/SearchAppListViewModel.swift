@@ -21,7 +21,11 @@ protocol SearchAppListViewModelOutput {
 class SearchAppListViewModel: SearchAppListViewModelInput, SearchAppListViewModelOutput {
 	var appInfoListObservable: Observable<[AppInfo]>
 	private let searchAppListUseCase: SearchAppListUseCase
-	private var searchAppLoadTask: Cancellable? { willSet { searchAppLoadTask?.cancel() } }
+	private var searchAppLoadTask: Cancellable? {
+		willSet {
+			searchAppLoadTask?.cancel()
+		}
+	}
 
 	init(searchAppListUseCase: SearchAppListUseCase) {
 		self.searchAppListUseCase = searchAppListUseCase
