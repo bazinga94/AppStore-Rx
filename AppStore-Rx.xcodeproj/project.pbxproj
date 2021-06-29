@@ -23,7 +23,7 @@
 		4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */; };
 		4386C9862682290D009B4A2D /* SearchAppListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C9852682290D009B4A2D /* SearchAppListUseCase.swift */; };
 		4386C98E2682291C009B4A2D /* AppInfoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */; };
-		4388B2EA268383510007EB30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2E9268383510007EB30 /* NetworkService.swift */; };
+		4388B2EA268383510007EB30 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2E9268383510007EB30 /* NetworkManager.swift */; };
 		4388B2FB268388C50007EB30 /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2FA268388C50007EB30 /* ApiConfig.swift */; };
 		4388B30026838C660007EB30 /* RepositoryTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B2FF26838C660007EB30 /* RepositoryTask.swift */; };
 		4388B311268394160007EB30 /* SearchAppListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4388B310268394160007EB30 /* SearchAppListTableViewCell.swift */; };
@@ -77,7 +77,7 @@
 		4386C97026822160009B4A2D /* AppInfoListResponse+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppInfoListResponse+Mapping.swift"; sourceTree = "<group>"; };
 		4386C9852682290D009B4A2D /* SearchAppListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListUseCase.swift; sourceTree = "<group>"; };
 		4386C98D2682291C009B4A2D /* AppInfoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoListRepository.swift; sourceTree = "<group>"; };
-		4388B2E9268383510007EB30 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		4388B2E9268383510007EB30 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4388B2FA268388C50007EB30 /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		4388B2FF26838C660007EB30 /* RepositoryTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTask.swift; sourceTree = "<group>"; };
 		4388B310268394160007EB30 /* SearchAppListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppListTableViewCell.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				B239657D2681B1FE00432C67 /* SearchAppDataTransferService.swift */,
-				4388B2E9268383510007EB30 /* NetworkService.swift */,
+				4388B2E9268383510007EB30 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -645,7 +645,7 @@
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
 				B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */,
 				B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */,
-				4388B2EA268383510007EB30 /* NetworkService.swift in Sources */,
+				4388B2EA268383510007EB30 /* NetworkManager.swift in Sources */,
 				4386C9432682096E009B4A2D /* SearchAppListViewModel.swift in Sources */,
 				B23965922681B6B400432C67 /* SearchAppSceneFlowCoordinator.swift in Sources */,
 				4386C97126822160009B4A2D /* AppInfoListResponse+Mapping.swift in Sources */,
