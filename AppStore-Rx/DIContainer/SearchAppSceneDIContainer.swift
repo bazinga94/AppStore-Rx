@@ -22,11 +22,7 @@ class SearchAppSceneDIContainer {
 		return SearchAppSceneFlowCoordinator(dependencies: self, navigationController: navigationController)
 	}
 
-//	private lazy var searchAppListViewModel: SearchAppListViewModel = {
-//		return SearchAppListViewModel(useCase: searchAppListUseCase, action: <#T##<<error type>>#>)
-//	}()
-
-	func makeSearchAppListViewModel(action: SearchAppListActionProtocol) -> SearchAppListViewModel {
+	private func makeSearchAppListViewModel(action: SearchAppListActionProtocol) -> SearchAppListViewModel {
 		return SearchAppListViewModel(useCase: searchAppListUseCase, action: action)
 	}
 

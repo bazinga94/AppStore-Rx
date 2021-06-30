@@ -29,7 +29,7 @@ class SearchAppSceneFlowCoordinator {
 
 extension SearchAppSceneFlowCoordinator: SearchAppListActionProtocol {
 	func showDetailAppInfoViewController(appInfo: AppInfo) {
-		let vc = dependencies.makeDetailAppInfoViewController()
+		let vc = dependencies.makeDetailAppInfoViewController()	// TODO: view model 주입
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }
