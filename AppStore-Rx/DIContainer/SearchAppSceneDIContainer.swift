@@ -22,9 +22,13 @@ class SearchAppSceneDIContainer {
 		return SearchAppSceneFlowCoordinator(dependencies: self, navigationController: navigationController)
 	}
 
-	private lazy var searchAppListViewModel: SearchAppListViewModel = {
-		return SearchAppListViewModel(searchAppListUseCase: searchAppListUseCase)
-	}()
+//	private lazy var searchAppListViewModel: SearchAppListViewModel = {
+//		return SearchAppListViewModel(useCase: searchAppListUseCase, action: <#T##<<error type>>#>)
+//	}()
+
+	func makeSearchAppListViewModel(action: SearchAppListActionProtocol) -> SearchAppListViewModel {
+		return SearchAppListViewModel(useCase: searchAppListUseCase, action: action)
+	}
 
 	private lazy var searchAppListUseCase: SearchAppListUseCase = {
 		return SearchAppListUseCase(appInfoListRepository: appInfoListRepository)
@@ -36,8 +40,12 @@ class SearchAppSceneDIContainer {
 }
 
 extension SearchAppSceneDIContainer: SearchAppSceneFlowCoordinatorDependency {
-	func makeSearchAppListViewController() -> SearchAppListViewController {
-		return SearchAppListViewController.create(with: searchAppListViewModel)
+	func makeSearchAppListViewController(action: SearchAppListActionProtocol) -> SearchAppListViewController {
+		return SearchAppListViewController.create(with: makeSearchAppListViewModel(action: action))
+	}
+
+	func makeDetailAppInfoViewController() -> DetailAppInfoViewController {
+		return DetailAppInfoViewController()	// TODO: view model 주입
 	}
 
 //	private func makeSearchAppListViewModel() -> SearchAppListViewModel {

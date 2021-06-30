@@ -66,6 +66,13 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 //				print("disposed")
 //			})
 //			.disposed(by: bag)
+
+		tableView.rx
+			.modelSelected(AppInfo.self)
+			.subscribe(onNext: { [weak self] appInfo in
+				self?.viewModel.didTapCell(appInfo: appInfo)
+			})
+			.disposed(by: bag)
 	}
 
 	/// searchBar 속성 구성

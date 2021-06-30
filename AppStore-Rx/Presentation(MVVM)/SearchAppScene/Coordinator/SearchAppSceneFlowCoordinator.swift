@@ -8,7 +8,8 @@
 import UIKit
 
 protocol SearchAppSceneFlowCoordinatorDependency {
-	func makeSearchAppListViewController() -> SearchAppListViewController
+	func makeSearchAppListViewController(action: SearchAppListActionProtocol) -> SearchAppListViewController
+	func makeDetailAppInfoViewController() -> DetailAppInfoViewController
 }
 
 class SearchAppSceneFlowCoordinator {
@@ -21,7 +22,14 @@ class SearchAppSceneFlowCoordinator {
 	}
 
 	func start() {
-		let vc = dependencies.makeSearchAppListViewController()
+		let vc = dependencies.makeSearchAppListViewController(action: self)
 		self.navigationController?.pushViewController(vc, animated: false)
+	}
+}
+
+extension SearchAppSceneFlowCoordinator: SearchAppListActionProtocol {
+	func showDetailAppInfoViewController(appInfo: AppInfo) {
+		let vc = dependencies.makeDetailAppInfoViewController()
+		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

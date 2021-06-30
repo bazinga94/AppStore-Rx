@@ -9,9 +9,14 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+protocol SearchAppListActionProtocol {
+	func showDetailAppInfoViewController(appInfo: AppInfo)
+}
+
 protocol SearchAppListViewModelInput {
 	func viewDidLoad()
 	func didSearch(query: String) -> Observable<[AppInfo]>
+	func didTapCell(appInfo: AppInfo)
 }
 
 protocol SearchAppListViewModelOutput {
@@ -24,14 +29,16 @@ protocol SearchAppListViewModelProtocol: SearchAppListViewModelInput, SearchAppL
 class SearchAppListViewModel: SearchAppListViewModelProtocol {
 	var appInfoListObservable: Observable<[AppInfo]>
 	private let searchAppListUseCase: SearchAppListUseCaseProtocol
+	private let searchAppListAction: SearchAppListActionProtocol
 	private var searchAppLoadTask: Cancellable? {
 		willSet {
 			searchAppLoadTask?.cancel()
 		}
 	}
 
-	init(searchAppListUseCase: SearchAppListUseCaseProtocol) {
-		self.searchAppListUseCase = searchAppListUseCase
+	init(useCase: SearchAppListUseCaseProtocol, action: SearchAppListActionProtocol) {
+		self.searchAppListUseCase = useCase
+		self.searchAppListAction = action
 		self.appInfoListObservable = Observable.of([])
 	}
 
@@ -42,15 +49,13 @@ class SearchAppListViewModel: SearchAppListViewModelProtocol {
 		self.appInfoListObservable = Observable.create { emitter in
 
 			let requestModel = SearchAppListUseCaseRequestModel(query: query)
-			self.searchAppLoadTask = self.searchAppListUseCase.execute(requestModel: requestModel) { [weak self] (result: Result<AppInfoList, Error>) in
+			self.searchAppLoadTask = self.searchAppListUseCase.execute(requestModel: requestModel) { (result: Result<AppInfoList, Error>) in
 				switch result {
 					case .success(let model):
 						emitter.onNext(model.displayedApps)
 						emitter.onCompleted()
-//						print(model)
 					case .failure(let error):
 						emitter.onError(error)
-//						print(error)	// TODO: - Error Handling 필요
 				}
 			}
 
@@ -59,5 +64,9 @@ class SearchAppListViewModel: SearchAppListViewModelProtocol {
 			}
 		}
 		return self.appInfoListObservable
+	}
+
+	func didTapCell(appInfo: AppInfo) {
+		self.searchAppListAction.showDetailAppInfoViewController(appInfo: appInfo)
 	}
 }
