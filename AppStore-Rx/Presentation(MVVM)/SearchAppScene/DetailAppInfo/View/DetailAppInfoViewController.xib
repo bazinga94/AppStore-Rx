@@ -38,9 +38,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="YmZ-nZ-hWd" firstAttribute="top" secondItem="uZ6-MP-8qp" secondAttribute="bottom" constant="60" id="Cnx-o8-UxT"/>
+                <constraint firstItem="YmZ-nZ-hWd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DJb-qF-jen"/>
                 <constraint firstItem="uZ6-MP-8qp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T8h-aH-jom"/>
                 <constraint firstItem="uZ6-MP-8qp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="TzE-Cd-0Rt"/>
                 <constraint firstItem="YmZ-nZ-hWd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="mhv-bJ-MMk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YmZ-nZ-hWd" secondAttribute="trailing" constant="20" id="nfC-gZ-e53"/>
             </constraints>
             <point key="canvasLocation" x="120" y="154"/>
         </view>
