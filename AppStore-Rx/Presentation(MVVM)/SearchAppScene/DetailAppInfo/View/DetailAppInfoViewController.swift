@@ -9,6 +9,9 @@ import UIKit
 
 class DetailAppInfoViewController: UIViewController {
 
+	@IBOutlet weak var iconImageView: UIImageView!
+	@IBOutlet weak var descriptionLabel: UILabel!
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
