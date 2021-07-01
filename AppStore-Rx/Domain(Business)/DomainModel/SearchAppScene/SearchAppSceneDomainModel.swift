@@ -25,4 +25,5 @@ struct AppInfo {
 	let secondScreenShotUrl: String
 	let thirdScreenShotUrl: String
 	let averageUserRating: Double
+	let description: String
 }

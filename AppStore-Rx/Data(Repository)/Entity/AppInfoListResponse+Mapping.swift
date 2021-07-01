@@ -61,6 +61,7 @@ extension AppInfoListDTO.AppInfoDTO {
 					   firstScreenShotUrl: screenshotUrls[safe: 0] ?? "",
 					   secondScreenShotUrl: screenshotUrls[safe: 1] ?? "",
 					   thirdScreenShotUrl: screenshotUrls[safe: 2] ?? "",
-					   averageUserRating: averageUserRating)
+					   averageUserRating: averageUserRating,
+					   description: description)
 	}
 }

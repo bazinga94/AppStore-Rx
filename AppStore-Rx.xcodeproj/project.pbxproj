@@ -17,6 +17,7 @@
 		4377571E267B91DC0000909C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4377571C267B91DC0000909C /* LaunchScreen.storyboard */; };
 		43775729267B91DC0000909C /* AppStore_RxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775728267B91DC0000909C /* AppStore_RxTests.swift */; };
 		43775734267B91DC0000909C /* AppStore_RxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43775733267B91DC0000909C /* AppStore_RxUITests.swift */; };
+		43856D0F268DA88600005D0C /* DetailAppInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43856D0E268DA88600005D0C /* DetailAppInfoViewModel.swift */; };
 		4386C9432682096E009B4A2D /* SearchAppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C9422682096E009B4A2D /* SearchAppListViewModel.swift */; };
 		4386C95E2682126F009B4A2D /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C95D2682126F009B4A2D /* Dynamic.swift */; };
 		4386C96826821485009B4A2D /* SearchAppSceneDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */; };
@@ -73,6 +74,7 @@
 		4377572F267B91DC0000909C /* AppStore-RxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AppStore-RxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43775733267B91DC0000909C /* AppStore_RxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore_RxUITests.swift; sourceTree = "<group>"; };
 		43775735267B91DC0000909C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43856D0E268DA88600005D0C /* DetailAppInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppInfoViewModel.swift; sourceTree = "<group>"; };
 		4386C9422682096E009B4A2D /* SearchAppListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAppListViewModel.swift; sourceTree = "<group>"; };
 		4386C95D2682126F009B4A2D /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		4386C96726821485009B4A2D /* SearchAppSceneDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAppSceneDomainModel.swift; sourceTree = "<group>"; };
@@ -187,6 +189,14 @@
 				43775735267B91DC0000909C /* Info.plist */,
 			);
 			path = "AppStore-RxUITests";
+			sourceTree = "<group>";
+		};
+		43856D0D268DA86A00005D0C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				43856D0E268DA88600005D0C /* DetailAppInfoViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4386C92D268206D7009B4A2D /* Domain(Business) */ = {
@@ -321,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				B23DCAEB268C1AD700744416 /* View */,
-				B23DCAF3268C1B1700744416 /* ViewModel */,
+				43856D0D268DA86A00005D0C /* ViewModel */,
 			);
 			path = DetailAppInfo;
 			sourceTree = "<group>";
@@ -333,13 +343,6 @@
 				B23DCAED268C1B0000744416 /* DetailAppInfoViewController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B23DCAF3268C1B1700744416 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B2619F07267C2295008B9D0E /* Application */ = {
@@ -674,6 +677,7 @@
 				4388B2FB268388C50007EB30 /* ApiConfig.swift in Sources */,
 				B239657E2681B1FE00432C67 /* SearchAppDataTransferService.swift in Sources */,
 				B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */,
+				43856D0F268DA88600005D0C /* DetailAppInfoViewModel.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
 				B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */,
 				B23965892681B4DB00432C67 /* AppDIContainer.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 protocol SearchAppSceneFlowCoordinatorDependency {
 	func makeSearchAppListViewController(action: SearchAppListActionProtocol) -> SearchAppListViewController
-	func makeDetailAppInfoViewController() -> DetailAppInfoViewController
+	func makeDetailAppInfoViewController(appInfo: AppInfo) -> DetailAppInfoViewController
 }
 
 class SearchAppSceneFlowCoordinator {
@@ -29,7 +29,7 @@ class SearchAppSceneFlowCoordinator {
 
 extension SearchAppSceneFlowCoordinator: SearchAppListActionProtocol {
 	func showDetailAppInfoViewController(appInfo: AppInfo) {
-		let vc = dependencies.makeDetailAppInfoViewController()	// TODO: view model 주입
+		let vc = dependencies.makeDetailAppInfoViewController(appInfo: appInfo)	// TODO: view model 주입
 		self.navigationController?.pushViewController(vc, animated: true)
 	}
 }

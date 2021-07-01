@@ -40,8 +40,8 @@ extension SearchAppSceneDIContainer: SearchAppSceneFlowCoordinatorDependency {
 		return SearchAppListViewController.create(with: makeSearchAppListViewModel(action: action))
 	}
 
-	func makeDetailAppInfoViewController() -> DetailAppInfoViewController {
-		return DetailAppInfoViewController()	// TODO: view model 주입
+	func makeDetailAppInfoViewController(appInfo: AppInfo) -> DetailAppInfoViewController {
+		return DetailAppInfoViewController.create(with: DetailAppInfoViewModel(appInfo: appInfo))
 	}
 
 //	private func makeSearchAppListViewModel() -> SearchAppListViewModel {
