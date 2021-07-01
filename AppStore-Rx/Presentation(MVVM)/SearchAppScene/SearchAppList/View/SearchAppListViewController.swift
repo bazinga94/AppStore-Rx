@@ -43,11 +43,8 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 			.compactMap{ $0?.lowercased() }
 			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in
 				return self.viewModel.didSearch(query: query)
-//					.catch { error -> Observable<[AppInfo]> in
-//						print(error)
-//						return Observable.of([])
-//					}
 			}
+//			.catchAndReturn([])
 //			.catch({ (error) -> Observable<[AppInfo]> in
 //				print(error)
 //				return Observable.of([])
@@ -62,16 +59,6 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 				cell.thirdScreenShot.load(url: element.thirdScreenShotUrl)
 			}	// bind는 onError로 넘어오는 error를 컨트롤 하지 못함
 			.disposed(by: bag)
-
-//		appInfoListObservable
-//			.subscribe(onError: {
-//				print($0)
-//			}, onCompleted: {
-//				print("completed")
-//			}, onDisposed: {
-//				print("disposed")
-//			})
-//			.disposed(by: bag)
 
 		tableView.rx
 			.modelSelected(AppInfo.self)

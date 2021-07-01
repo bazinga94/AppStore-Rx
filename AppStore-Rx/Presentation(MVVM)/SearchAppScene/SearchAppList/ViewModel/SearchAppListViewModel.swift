@@ -53,9 +53,10 @@ class SearchAppListViewModel: SearchAppListViewModelProtocol {
 				switch result {
 					case .success(let model):
 						emitter.onNext(model.displayedApps)
-						emitter.onCompleted()
 					case .failure(let error):
-						emitter.onError(error)
+						print(error)
+						emitter.onNext([])
+//						emitter.onError(error)	// 에러로 처리하지 않고 빈 array return
 				}
 			}
 
