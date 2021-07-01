@@ -22,7 +22,7 @@ class AppInfoListRepository: AppInfoListRepositoryProtocol {
 
 	func fetchAppInfoList(query: AppInfoListQuery, completion: @escaping (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
 
-		let api = AppStoreApi(word: query.query, limit: 10)
+		let api = AppStoreApi(word: query.query, limit: 50)
 		guard let searchUrl = encodeCharacterUrl(urlString: api.url) else { return nil }	// nil을 return 하면 안될것 같음
 
 		let task = RepositoryTask()
