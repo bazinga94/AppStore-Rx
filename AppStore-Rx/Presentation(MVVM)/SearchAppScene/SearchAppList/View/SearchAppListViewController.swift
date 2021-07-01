@@ -54,6 +54,12 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 //			})
 			.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
 				cell.iconImageView.load(url: element.appIconImageUrl)
+				cell.appName.text = element.appName
+				cell.appGenre.text = element.appGenre
+				cell.numberOfUsers.text = element.numberOfReviews
+				cell.firstScreenShot.load(url: element.firstScreenShotUrl)
+				cell.secondScreenShot.load(url: element.secondScreenShotUrl)
+				cell.thirdScreenShot.load(url: element.thirdScreenShotUrl)
 			}	// bind는 onError로 넘어오는 error를 컨트롤 하지 못함
 			.disposed(by: bag)
 
@@ -101,6 +107,6 @@ extension SearchAppListViewController: UISearchBarDelegate {
 
 extension SearchAppListViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 200
+		return 330
 	}
 }

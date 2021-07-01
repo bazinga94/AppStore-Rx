@@ -109,9 +109,9 @@ extension UIImageView {
 	/// UIImageView 모서리를 둥글게 변경
 	/// - Parameter radius: radius
 	func cornerRadius(by radius: CGFloat) {
-		self.layer.borderWidth = 1
+		self.layer.borderWidth = 0.5
 		self.layer.masksToBounds = false
-		self.layer.borderColor = UIColor.black.cgColor
+		self.layer.borderColor = UIColor.lightGray.cgColor
 		self.layer.cornerRadius = radius
 		self.clipsToBounds = true
 	}
