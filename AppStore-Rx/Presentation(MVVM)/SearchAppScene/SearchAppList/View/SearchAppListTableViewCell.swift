@@ -29,4 +29,12 @@ class SearchAppListTableViewCell: UITableViewCell {
 		super.setSelected(selected, animated: animated)
 		// Configure the view for the selected state
 	}
+
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		iconImageView.image = nil
+		firstScreenShot.image = nil
+		secondScreenShot.image = nil
+		thirdScreenShot.image = nil
+	}
 }
