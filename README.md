@@ -28,6 +28,9 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 	- Entity:
 		통신 응답 JSON, DB 테이블 데이터(통신의 경우 Codable struct)
 
+4. DI Container: 의존성을 주입해 주는 container, 특정 scene에 대한 인스턴스를 가지고 있고 관리한다. -> Class Dependency 제거
+객체에 대한 의존성보단 추상화(protocol)된 것에 의존한다 + 객체를 직접 생성하지 않고 외부에서 생성
+ViewModel은 UseCase에 대해, UseCase는 Repository에 대해 모름 채택한 protocol대로 사용만 할 뿐
 
 + "패턴, 구조" 에 따라 Domain Layer 와 Repository는 합쳐져도 상관없음 
 + Data Source도 Repository에서 한번에 수행 가능하면 한번에 수행
@@ -45,3 +48,5 @@ https://medium.com/@justfaceit/clean-architecture%EB%8A%94-%EB%AA%A8%EB%B0%94%EC
 https://eunjin3786.tistory.com/207
 
 https://medium.com/@jang.wangsu/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-swift-coordinator-pattern-426a7628e2f4
+
+https://lidium.tistory.com/34
