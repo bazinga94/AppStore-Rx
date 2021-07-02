@@ -12,9 +12,9 @@ protocol SearchAppSceneFlowCoordinatorDependency {
 	func makeDetailAppInfoViewController(appInfo: AppInfo) -> DetailAppInfoViewController
 }
 
-class SearchAppSceneFlowCoordinator {
+class SearchAppSceneFlowCoordinator: Coordinator {
 	private let dependencies: SearchAppSceneFlowCoordinatorDependency
-	private weak var navigationController: UINavigationController?
+	var navigationController: UINavigationController
 
 	init(dependencies: SearchAppSceneFlowCoordinatorDependency, navigationController: UINavigationController) {
 		self.dependencies = dependencies
@@ -23,13 +23,13 @@ class SearchAppSceneFlowCoordinator {
 
 	func start() {
 		let vc = dependencies.makeSearchAppListViewController(action: self)
-		self.navigationController?.pushViewController(vc, animated: false)
+		self.navigationController.pushViewController(vc, animated: false)
 	}
 }
 
 extension SearchAppSceneFlowCoordinator: SearchAppListActionProtocol {
 	func showDetailAppInfoViewController(appInfo: AppInfo) {
 		let vc = dependencies.makeDetailAppInfoViewController(appInfo: appInfo)	// TODO: view model 주입
-		self.navigationController?.pushViewController(vc, animated: true)
+		self.navigationController.pushViewController(vc, animated: true)
 	}
 }

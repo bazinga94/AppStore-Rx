@@ -7,7 +7,12 @@
 
 import UIKit
 
-class AppFlowCoordinator {
+protocol Coordinator {
+	var navigationController: UINavigationController { get set }
+	func start()
+}
+
+class AppFlowCoordinator: Coordinator {
 	var navigationController: UINavigationController
 	private let appDIContainer: AppDIContainer
 
