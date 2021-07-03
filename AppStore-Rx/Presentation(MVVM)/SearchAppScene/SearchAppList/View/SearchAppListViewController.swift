@@ -39,9 +39,13 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 
 		searchBar.rx
 			.text
-			.asObservable()
-			.compactMap{ $0?.lowercased() }
+			.orEmpty		// text를 optional 말고 String으로 받음
+//			.asObservable()	// 필요 없을듯
+			.throttle(.milliseconds(500), scheduler: MainScheduler.instance)	// 0.5초 동안 새로운 입력 무시
+			.distinctUntilChanged()		// 중복 호출 방지
+			.compactMap{ $0.lowercased() }
 			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in
+				print(query)
 				return self.viewModel.didSearch(query: query)
 			}
 //			.catchAndReturn([])
