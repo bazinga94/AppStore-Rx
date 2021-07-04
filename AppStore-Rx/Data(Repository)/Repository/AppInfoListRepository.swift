@@ -22,7 +22,7 @@ class AppInfoListRepository: AppInfoListRepositoryProtocol {
 
 	func fetchAppInfoList(query: AppInfoListQuery, completion: @escaping (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
 
-		let api = AppStoreApi(word: query.query, limit: 50)
+		let api = AppStoreApi(word: query.query, limit: 20)
 //		if var urlComponents = URLComponents(string: "https://itunes.apple.com/search") {
 //			urlComponents.query = "media=software&entity=software&term=\(searchTerm)"
 //			guard let url = urlComponents.url else { return nil }

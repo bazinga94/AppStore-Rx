@@ -29,12 +29,14 @@ class SearchAppDataTransferService: NetworkManagerProtocol {
 				guard let data = data else {
 					return completion(.failure(.dataNil))
 				}
-
-				guard let model = try? JSONDecoder().decode(T.self, from: data) else {
+				do {
+					let model = try JSONDecoder().decode(T.self, from: data)
 //					print(String(data: data, encoding: .utf8))
+					return completion(.success(model))
+				} catch {
+					print(error)
 					return completion(.failure(.decodingJSON))
 				}
-				return completion(.success(model))
 			}
 		task.resume()
 		return task
