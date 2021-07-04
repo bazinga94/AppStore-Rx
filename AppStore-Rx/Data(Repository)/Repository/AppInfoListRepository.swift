@@ -23,6 +23,10 @@ class AppInfoListRepository: AppInfoListRepositoryProtocol {
 	func fetchAppInfoList(query: AppInfoListQuery, completion: @escaping (Result<AppInfoList, Error>) -> Void) -> Cancellable? {
 
 		let api = AppStoreApi(word: query.query, limit: 50)
+//		if var urlComponents = URLComponents(string: "https://itunes.apple.com/search") {
+//			urlComponents.query = "media=software&entity=software&term=\(searchTerm)"
+//			guard let url = urlComponents.url else { return nil }
+//		}	// 이렇게도 활용 가능한 것 같은데..
 		guard let searchUrl = encodeCharacterUrl(urlString: api.url) else { return nil }	// nil을 return 하면 안될것 같음
 
 		let task = RepositoryTask()
