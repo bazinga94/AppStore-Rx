@@ -48,6 +48,8 @@ class SearchAppListViewModel: SearchAppListViewModelProtocol {
 	func didSearch(query: String) -> Observable<[AppInfo]> {
 		self.appInfoListObservable = Observable.create { emitter in
 
+			// defer 사용?
+
 			let requestModel = SearchAppListUseCaseRequestModel(query: query)
 			self.searchAppLoadTask = self.searchAppListUseCase.execute(requestModel: requestModel) { (result: Result<AppInfoList, Error>) in
 				switch result {
