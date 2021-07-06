@@ -14,7 +14,7 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 	- UseCase:
 		Entity를 사용하여 비즈니스 로직 구현(업무 요구 사항)
 	- Domain Model:
-		앱에서 사용하는 실질적인 데이터(display model)
+		앱에서 사용하는 실질적인 데이터(display model) -> Entity??
 	- Translator:
 		Entity <-> Domain Model 변환, ViewModel에서 사용할 format으로
 		Model의 extension으로 mapper를 구현하여 필요 없을듯
@@ -26,7 +26,7 @@ Clean Architecture 구조에서 RxSwift, RxCocoa를 사용하여 AppStore를 만
 	- Data Source:
 		데이터의 입출력 실행, 인터페이스 형태로 제공(통신 API or 로컬 DB or mock 데이터 접근 등으로 전환 가능)
 	- Entity:
-		통신 응답 JSON, DB 테이블 데이터(통신의 경우 Codable struct)
+		통신 응답 JSON, DB 테이블 데이터(통신의 경우 Codable struct) -> API Response??
 
 4. DI Container: 의존성을 주입해 주는 container, 특정 scene에 대한 인스턴스를 가지고 있고 관리한다. -> Class Dependency 제거
 객체에 대한 의존성보단 추상화(protocol)된 것에 의존한다 + 객체를 직접 생성하지 않고 외부에서 생성
