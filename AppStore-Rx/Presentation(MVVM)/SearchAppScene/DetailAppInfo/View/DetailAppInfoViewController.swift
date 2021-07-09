@@ -21,7 +21,8 @@ class DetailAppInfoViewController: UIViewController {
 		viewModel.viewDidLoad()
 			.observe(on: MainScheduler.instance)
 			.subscribe(onNext: { [weak self] appInfo in
-				self?.iconImageView.load(url: appInfo.appIconImageUrl)
+//				self?.iconImageView.load(url: appInfo.appIconImageUrl)
+				self?.iconImageView.kf.setImage(with: URL(string: appInfo.appIconImageUrl))
 				self?.descriptionLabel.text = appInfo.description
 			})
 			.disposed(by: bag)

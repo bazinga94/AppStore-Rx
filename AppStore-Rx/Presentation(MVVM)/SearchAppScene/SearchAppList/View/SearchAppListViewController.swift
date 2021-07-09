@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
 class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 
@@ -54,13 +55,17 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 //				return Observable.of([])
 //			})
 			.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
-				cell.iconImageView.load(url: element.appIconImageUrl)
+//				cell.iconImageView.load(url: element.appIconImageUrl)
+				cell.iconImageView.kf.setImage(with: URL(string: element.appIconImageUrl))
 				cell.appName.text = element.appName
 				cell.appGenre.text = element.appGenre
 				cell.numberOfUsers.text = element.numberOfReviews
-				cell.firstScreenShot.load(url: element.firstScreenShotUrl)
-				cell.secondScreenShot.load(url: element.secondScreenShotUrl)
-				cell.thirdScreenShot.load(url: element.thirdScreenShotUrl)
+//				cell.firstScreenShot.load(url: element.firstScreenShotUrl)
+//				cell.secondScreenShot.load(url: element.secondScreenShotUrl)
+//				cell.thirdScreenShot.load(url: element.thirdScreenShotUrl)
+				cell.firstScreenShot.kf.setImage(with: URL(string: element.firstScreenShotUrl))
+				cell.secondScreenShot.kf.setImage(with: URL(string: element.secondScreenShotUrl))
+				cell.thirdScreenShot.kf.setImage(with: URL(string: element.thirdScreenShotUrl))
 			}	// bind는 onError로 넘어오는 error를 컨트롤 하지 못함
 			.disposed(by: bag)
 
