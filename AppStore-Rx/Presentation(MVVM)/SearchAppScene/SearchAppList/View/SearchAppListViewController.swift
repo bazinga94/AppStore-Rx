@@ -58,7 +58,17 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 				cell.iconImageView.kf.indicatorType = .activity		// Indicator 지정 가능
 //				cell.iconImageView.load(url: element.appIconImageUrl)
 //				cell.iconImageView.kf.setImage(with: URL(string: element.appIconImageUrl))
-				cell.iconImageView.kf.setImage(with: URL(string: element.appIconImageUrl), placeholder: UIImage(named: "morty"))	// Placeholder 지정 가능
+				cell.iconImageView.kf.setImage(with: URL(string: element.appIconImageUrl), placeholder: UIImage(named: "morty")) { (result) in
+					switch result {
+						case .success(let value):
+							print(value.cacheType)
+//							print(value.image)
+//							print(value.originalSource)
+//							print(value.source)
+						case .failure(let error):
+							print(error)
+					}
+				}	// Placeholder 지정 가능
 				cell.appName.text = element.appName
 				cell.appGenre.text = element.appGenre
 				cell.numberOfUsers.text = element.numberOfReviews
