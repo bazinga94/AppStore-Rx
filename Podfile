@@ -9,6 +9,7 @@ target 'AppStore-Rx' do
 
     pod 'RxSwift', '~> 6.0.0'
     pod 'RxCocoa', '~> 6.0.0'
+    pod 'Kingfisher', '~> 6.0'
 
   target 'AppStore-RxTests' do
     inherit! :search_paths
