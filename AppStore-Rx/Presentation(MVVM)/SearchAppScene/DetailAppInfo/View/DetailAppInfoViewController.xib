@@ -40,15 +40,24 @@
                         <action selector="backButton:" destination="-1" eventType="touchUpInside" id="B9h-0Q-ZLo"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu0-gB-u4S">
+                    <rect key="frame" x="168" y="84" width="78" height="30"/>
+                    <state key="normal" title="New Scene"/>
+                    <connections>
+                        <action selector="newScene:" destination="-1" eventType="touchUpInside" id="5md-Jq-LzH"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="pQ8-Hh-VVH" firstAttribute="top" secondItem="yu0-gB-u4S" secondAttribute="bottom" constant="20" id="0zm-bl-wqD"/>
                 <constraint firstItem="uZ6-MP-8qp" firstAttribute="top" secondItem="pQ8-Hh-VVH" secondAttribute="bottom" constant="30" id="CXB-nE-Vek"/>
                 <constraint firstItem="YmZ-nZ-hWd" firstAttribute="top" secondItem="uZ6-MP-8qp" secondAttribute="bottom" constant="60" id="Cnx-o8-UxT"/>
                 <constraint firstItem="YmZ-nZ-hWd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="DJb-qF-jen"/>
                 <constraint firstItem="uZ6-MP-8qp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T8h-aH-jom"/>
                 <constraint firstItem="uZ6-MP-8qp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="TzE-Cd-0Rt"/>
+                <constraint firstItem="yu0-gB-u4S" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="j7B-rG-GtW"/>
                 <constraint firstItem="YmZ-nZ-hWd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="mhv-bJ-MMk"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YmZ-nZ-hWd" secondAttribute="trailing" constant="20" id="nfC-gZ-e53"/>
                 <constraint firstItem="pQ8-Hh-VVH" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qFl-h7-PCO"/>

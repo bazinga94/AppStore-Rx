@@ -18,6 +18,11 @@ class DetailAppInfoViewController: UIViewController {
 		viewModel.popViewController()
 	}
 
+	@IBAction func newScene(_ sender: Any) {
+		viewModel.presentNewScene()
+	}
+
+
 	private var viewModel: DetailAppInfoViewModelProtocol!
 	private var bag = DisposeBag()
 

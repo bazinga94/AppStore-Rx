@@ -38,4 +38,11 @@ extension SearchAppSceneFlowCoordinator: DetailAppInfoActionProtocol {
 	func popDetailAppInfoViewController() {
 		self.navigationController.popViewController(animated: true)
 	}
+
+	func presentSecondScene() {
+		let secondSceneDIContainer = SecondSceneDIContainer()
+		let secondSceneFlowCoordinator = secondSceneDIContainer.makeSecondSceneFlowCoordinator()
+		secondSceneFlowCoordinator.presenter = navigationController
+		secondSceneFlowCoordinator.start()
+	}
 }

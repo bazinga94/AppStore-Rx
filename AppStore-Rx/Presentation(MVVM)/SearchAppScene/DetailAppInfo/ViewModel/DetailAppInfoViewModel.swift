@@ -10,11 +10,13 @@ import RxSwift
 
 protocol DetailAppInfoActionProtocol {
 	func popDetailAppInfoViewController()
+	func presentSecondScene()
 }
 
 protocol DetailAppInfoViewModelInput {
 	func viewDidLoad() -> Observable<AppInfo>
 	func popViewController()
+	func presentNewScene()
 }
 
 protocol DetailAppInfoViewModelProtocol: DetailAppInfoViewModelInput {
@@ -38,5 +40,9 @@ class DetailAppInfoViewModel: DetailAppInfoViewModelProtocol {
 
 	func popViewController() {
 		detailAppInfoAction.popDetailAppInfoViewController()
+	}
+
+	func presentNewScene() {
+		detailAppInfoAction.presentSecondScene()
 	}
 }
