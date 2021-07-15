@@ -7,17 +7,17 @@
 
 import UIKit
 
-protocol SecondViewActionProtocol {
+protocol SecondViewActionProtocol: class {
 	func dismissAndPopToRoot()
 }
 
 class SecondViewController: UIViewController {
 
 	@IBAction func dismissAction(_ sender: Any) {
-		coordinator.dismissAndPopToRoot()
+		coordinator?.dismissAndPopToRoot()
 	}
 
-	private var coordinator: SecondViewActionProtocol!
+	weak var coordinator: SecondViewActionProtocol?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
