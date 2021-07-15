@@ -7,11 +7,16 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class DetailAppInfoViewController: UIViewController {
 
 	@IBOutlet weak var iconImageView: UIImageView!
 	@IBOutlet weak var descriptionLabel: UILabel!
+
+	@IBAction func backButton(_ sender: Any) {
+		viewModel.popViewController()
+	}
 
 	private var viewModel: DetailAppInfoViewModelProtocol!
 	private var bag = DisposeBag()
