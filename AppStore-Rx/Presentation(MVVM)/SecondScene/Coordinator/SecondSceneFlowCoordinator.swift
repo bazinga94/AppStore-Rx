@@ -12,8 +12,10 @@ protocol SecondSceneFlowCoordinatorDependency {
 }
 
 class SecondSceneFlowCoordinator: Coordinator {
+	var childCoordinators: [Coordinator] = []
 	private let dependencies: SecondSceneFlowCoordinatorDependency
 	weak var presenter: UIViewController?
+	weak var parentCoordinator: SearchAppSceneFlowCoordinator?
 	lazy var navigationController: UINavigationController = {
 		return UINavigationController()
 	}()
@@ -37,5 +39,6 @@ class SecondSceneFlowCoordinator: Coordinator {
 extension SecondSceneFlowCoordinator: SecondViewActionProtocol {
 	func dismissAndPopToRoot() {
 		navigationController.dismiss(animated: true, completion: nil)
+		parentCoordinator?.removeChild(self)
 	}
 }

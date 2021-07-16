@@ -357,9 +357,9 @@
 		B23DCB87269FBD4800744416 /* SecondScene */ = {
 			isa = PBXGroup;
 			children = (
-				B23DCB8A269FBD6500744416 /* Coordinator */,
-				B23DCB89269FBD6000744416 /* ViewModel */,
 				B23DCB88269FBD5A00744416 /* View */,
+				B23DCB89269FBD6000744416 /* ViewModel */,
+				B23DCB8A269FBD6500744416 /* Coordinator */,
 			);
 			path = SecondScene;
 			sourceTree = "<group>";

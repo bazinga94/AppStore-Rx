@@ -13,6 +13,7 @@ protocol SearchAppSceneFlowCoordinatorDependency {
 }
 
 class SearchAppSceneFlowCoordinator: Coordinator {
+	var childCoordinators: [Coordinator] = []
 	private let dependencies: SearchAppSceneFlowCoordinatorDependency
 	var navigationController: UINavigationController
 
@@ -43,6 +44,12 @@ extension SearchAppSceneFlowCoordinator: DetailAppInfoActionProtocol {
 		let secondSceneDIContainer = SecondSceneDIContainer()
 		let secondSceneFlowCoordinator = secondSceneDIContainer.makeSecondSceneFlowCoordinator()
 		secondSceneFlowCoordinator.presenter = navigationController
+		childCoordinators.append(secondSceneFlowCoordinator)
+		secondSceneFlowCoordinator.parentCoordinator = self
 		secondSceneFlowCoordinator.start()
+	}
+
+	func removeChild(_ coordinator: Coordinator) {
+		childCoordinators = childCoordinators.filter { $0 !== coordinator }
 	}
 }
