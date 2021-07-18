@@ -39,6 +39,6 @@ class SecondSceneFlowCoordinator: Coordinator {
 extension SecondSceneFlowCoordinator: SecondViewActionProtocol {
 	func dismissAndPopToRoot() {
 		navigationController.dismiss(animated: true, completion: nil)
-		parentCoordinator?.removeChild(self)
+//		parentCoordinator?.removeChild(self)
 	}
 }

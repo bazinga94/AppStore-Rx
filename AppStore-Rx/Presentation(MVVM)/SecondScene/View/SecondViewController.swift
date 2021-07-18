@@ -23,6 +23,13 @@ class SecondViewController: UIViewController {
 		super.viewDidLoad()
 	}
 
+	override func viewDidDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+		if let coordinator = coordinator as? Coordinator {
+			coordinator.removeChild(coordinator)
+		}
+	}
+
 	static func create(with coordinator: SecondViewActionProtocol) -> SecondViewController {
 		let vc = SecondViewController()
 		vc.coordinator = coordinator
