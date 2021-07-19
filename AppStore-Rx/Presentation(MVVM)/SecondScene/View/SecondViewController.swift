@@ -9,6 +9,7 @@ import UIKit
 
 protocol SecondViewActionProtocol: class {
 	func dismissAndPopToRoot()
+	func finishFlow()
 }
 
 class SecondViewController: UIViewController {
@@ -25,9 +26,7 @@ class SecondViewController: UIViewController {
 
 	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
-		if let coordinator = coordinator as? Coordinator {
-			coordinator.removeChild(coordinator)
-		}
+		coordinator?.finishFlow()
 	}
 
 	static func create(with coordinator: SecondViewActionProtocol) -> SecondViewController {

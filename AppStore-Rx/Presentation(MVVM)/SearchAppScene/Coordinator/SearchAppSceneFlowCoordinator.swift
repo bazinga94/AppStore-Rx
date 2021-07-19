@@ -48,8 +48,4 @@ extension SearchAppSceneFlowCoordinator: DetailAppInfoActionProtocol {
 		secondSceneFlowCoordinator.parentCoordinator = self
 		secondSceneFlowCoordinator.start()
 	}
-
-//	func removeChild(_ coordinator: Coordinator) {
-//		childCoordinators = childCoordinators.filter { $0 !== coordinator }
-//	}
 }
