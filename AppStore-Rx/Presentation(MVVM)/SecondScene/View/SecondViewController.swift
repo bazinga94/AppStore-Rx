@@ -16,18 +16,28 @@ class SecondViewController: UIViewController {
 
 	@IBAction func dismissAction(_ sender: Any) {
 		coordinator?.dismissAndPopToRoot()
+		coordinator?.finishFlow()
 	}
 
 	weak var coordinator: SecondViewActionProtocol?
+
+//	deinit {
+//		coordinator?.finishFlow()
+//	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 
-	override func viewDidDisappear(_ animated: Bool) {
-		super.viewDidDisappear(animated)
-		coordinator?.finishFlow()
-	}
+//	override func viewWillDisappear(_ animated: Bool) {
+//		super.viewWillDisappear(animated)
+//		coordinator?.finishFlow()
+//	}
+
+//	override func viewDidDisappear(_ animated: Bool) {
+//		super.viewDidDisappear(animated)
+//		coordinator?.finishFlow()
+//	}
 
 	static func create(with coordinator: SecondViewActionProtocol) -> SecondViewController {
 		let vc = SecondViewController()
