@@ -45,7 +45,7 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 			.throttle(.milliseconds(500), scheduler: MainScheduler.instance)	// 0.5초 동안 새로운 입력 무시
 			.distinctUntilChanged()		// 중복 호출 방지
 			.compactMap{ $0.lowercased() }
-			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in
+			.flatMapLatest { [unowned self] query -> Observable<[AppInfo]> in	// Observable 생성 중에 새로운 이벤트가 들어오면 새로 Observable을 생성
 				print(query)
 				return self.viewModel.didSearch(query: query)
 			}
