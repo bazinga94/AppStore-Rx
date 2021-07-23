@@ -55,29 +55,7 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 //				return Observable.of([])
 //			})
 			.bind(to: tableView.rx.items(cellIdentifier: SearchAppListTableViewCell.className, cellType: SearchAppListTableViewCell.self)) { row, element, cell in
-				cell.iconImageView.kf.indicatorType = .activity		// Indicator 지정 가능
-//				cell.iconImageView.load(url: element.appIconImageUrl)
-//				cell.iconImageView.kf.setImage(with: URL(string: element.appIconImageUrl))
-				cell.iconImageView.kf.setImage(with: URL(string: element.appIconImageUrl), placeholder: UIImage(named: "morty")) { (result) in
-					switch result {
-						case .success(let value):
-							print(value.cacheType)
-//							print(value.image)
-//							print(value.originalSource)
-//							print(value.source)
-						case .failure(let error):
-							print(error)
-					}
-				}	// Placeholder 지정 가능
-				cell.appName.text = element.appName
-				cell.appGenre.text = element.appGenre
-				cell.numberOfUsers.text = element.numberOfReviews
-//				cell.firstScreenShot.load(url: element.firstScreenShotUrl)
-//				cell.secondScreenShot.load(url: element.secondScreenShotUrl)
-//				cell.thirdScreenShot.load(url: element.thirdScreenShotUrl)
-				cell.firstScreenShot.kf.setImage(with: URL(string: element.firstScreenShotUrl))
-				cell.secondScreenShot.kf.setImage(with: URL(string: element.secondScreenShotUrl))
-				cell.thirdScreenShot.kf.setImage(with: URL(string: element.thirdScreenShotUrl))
+				cell.configure(model: element)
 			}	// bind는 onError로 넘어오는 error를 컨트롤 하지 못함
 			.disposed(by: bag)
 
