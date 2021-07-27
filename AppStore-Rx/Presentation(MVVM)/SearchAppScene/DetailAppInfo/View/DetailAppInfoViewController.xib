@@ -10,8 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailAppInfoViewController" customModule="AppStore_Rx" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="pQ8-Hh-VVH" id="WAO-1Y-41Z"/>
                 <outlet property="descriptionLabel" destination="YmZ-nZ-hWd" id="iMU-aR-Qlj"/>
                 <outlet property="iconImageView" destination="uZ6-MP-8qp" id="q96-w2-9Cz"/>
+                <outlet property="newSceneButton" destination="yu0-gB-u4S" id="jLy-Ki-AFI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,14 +39,14 @@
                     <rect key="frame" x="190" y="134" width="34" height="30"/>
                     <state key="normal" title="Back"/>
                     <connections>
-                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="B9h-0Q-ZLo"/>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="JRA-9y-sTZ"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu0-gB-u4S">
                     <rect key="frame" x="168" y="84" width="78" height="30"/>
                     <state key="normal" title="New Scene"/>
                     <connections>
-                        <action selector="newScene:" destination="-1" eventType="touchUpInside" id="5md-Jq-LzH"/>
+                        <action selector="newScene:" destination="-1" eventType="touchUpInside" id="8UN-aZ-QbZ"/>
                     </connections>
                 </button>
             </subviews>

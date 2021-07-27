@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 protocol DetailAppInfoActionProtocol {
 	func popDetailAppInfoViewController()
@@ -14,9 +15,10 @@ protocol DetailAppInfoActionProtocol {
 }
 
 protocol DetailAppInfoViewModelInput {
-	func viewDidLoad() -> Observable<AppInfo>
-	func popViewController()
-	func presentNewScene()
+//	func viewDidLoad() -> Observable<AppInfo>
+//	func popViewController()
+//	func presentNewScene()
+	func transform(input: DetailAppInfoViewModel.Input) -> DetailAppInfoViewModel.Output
 }
 
 protocol DetailAppInfoViewModelProtocol: DetailAppInfoViewModelInput {
@@ -34,15 +36,39 @@ class DetailAppInfoViewModel: DetailAppInfoViewModelProtocol {
 		self.detailAppInfoAction = action
 	}
 
-	func viewDidLoad() -> Observable<AppInfo> {
-		return appInfoObservable
+	func transform(input: Input) -> Output {
+		let newScene = Driver.of(input.newSceneTrigger)
+			.merge()
+			.do(onNext: detailAppInfoAction.presentSecondScene)
+		let dismiss = Driver.of(input.dismissTrigger)
+			.merge()
+			.do(onNext: detailAppInfoAction.popDetailAppInfoViewController)
+
+		let output = Output(newScene: newScene, dismiss: dismiss)
+		return output
 	}
 
-	func popViewController() {
-		detailAppInfoAction.popDetailAppInfoViewController()
+//	func viewDidLoad() -> Observable<AppInfo> {
+//		return appInfoObservable
+//	}
+//
+//	func popViewController() {
+//		detailAppInfoAction.popDetailAppInfoViewController()
+//	}
+//
+//	func presentNewScene() {
+//		detailAppInfoAction.presentSecondScene()
+//	}
+}
+
+extension DetailAppInfoViewModel {
+	struct Input {
+		let newSceneTrigger: Driver<Void>
+		let dismissTrigger: Driver<Void>
 	}
 
-	func presentNewScene() {
-		detailAppInfoAction.presentSecondScene()
+	struct Output {
+		let newScene: Driver<Void>
+		let dismiss: Driver<Void>
 	}
 }
