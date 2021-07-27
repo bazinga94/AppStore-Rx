@@ -15,9 +15,6 @@ protocol DetailAppInfoActionProtocol {
 }
 
 protocol DetailAppInfoViewModelInput {
-//	func viewDidLoad() -> Observable<AppInfo>
-//	func popViewController()
-//	func presentNewScene()
 	func transform(input: DetailAppInfoViewModel.Input) -> DetailAppInfoViewModel.Output
 }
 
@@ -26,17 +23,20 @@ protocol DetailAppInfoViewModelProtocol: DetailAppInfoViewModelInput {
 
 class DetailAppInfoViewModel: DetailAppInfoViewModelProtocol {
 	private let detailAppInfoAction: DetailAppInfoActionProtocol
-	private let appInfoObservable: Observable<AppInfo>
+	private let appInfo: AppInfo
 
 	init(appInfo: AppInfo, action: DetailAppInfoActionProtocol) {
-		appInfoObservable = Observable.create { emitter in
-			emitter.onNext(appInfo)
-			return Disposables.create()
-		}
+		self.appInfo = appInfo
 		self.detailAppInfoAction = action
 	}
 
 	func transform(input: Input) -> Output {
+		let iconImage = Driver.of(appInfo)
+			.map { $0.appIconImageUrl }
+			.asDriver()
+		let detail = Driver.of(appInfo)
+			.map { $0.description }
+			.asDriver()
 		let newScene = Driver.of(input.newSceneTrigger)
 			.merge()
 			.do(onNext: detailAppInfoAction.presentSecondScene)
@@ -44,21 +44,9 @@ class DetailAppInfoViewModel: DetailAppInfoViewModelProtocol {
 			.merge()
 			.do(onNext: detailAppInfoAction.popDetailAppInfoViewController)
 
-		let output = Output(newScene: newScene, dismiss: dismiss)
+		let output = Output(iconImage: iconImage, detail: detail, newScene: newScene, dismiss: dismiss)
 		return output
 	}
-
-//	func viewDidLoad() -> Observable<AppInfo> {
-//		return appInfoObservable
-//	}
-//
-//	func popViewController() {
-//		detailAppInfoAction.popDetailAppInfoViewController()
-//	}
-//
-//	func presentNewScene() {
-//		detailAppInfoAction.presentSecondScene()
-//	}
 }
 
 extension DetailAppInfoViewModel {
@@ -68,6 +56,8 @@ extension DetailAppInfoViewModel {
 	}
 
 	struct Output {
+		let iconImage: Driver<String>
+		let detail: Driver<String>
 		let newScene: Driver<Void>
 		let dismiss: Driver<Void>
 	}
