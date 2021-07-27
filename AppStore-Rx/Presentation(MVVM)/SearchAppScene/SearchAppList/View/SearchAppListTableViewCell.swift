@@ -32,6 +32,10 @@ class SearchAppListTableViewCell: UITableViewCell {
 
 	override func prepareForReuse() {
 		super.prepareForReuse()
+		iconImageView.kf.cancelDownloadTask()
+		firstScreenShot.kf.cancelDownloadTask()
+		secondScreenShot.kf.cancelDownloadTask()
+		thirdScreenShot.kf.cancelDownloadTask()
 		iconImageView.image = nil
 		firstScreenShot.image = nil
 		secondScreenShot.image = nil
