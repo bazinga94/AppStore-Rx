@@ -13,15 +13,14 @@ class DetailAppInfoViewController: UIViewController {
 
 	@IBOutlet weak var iconImageView: UIImageView!
 	@IBOutlet weak var descriptionLabel: UILabel!
+	@IBOutlet weak var newSceneButton: UIButton!
+	@IBOutlet weak var backButton: UIButton!
 
 	@IBAction func backButton(_ sender: Any) {
 	}
 
 	@IBAction func newScene(_ sender: Any) {
 	}
-
-	@IBOutlet weak var newSceneButton: UIButton!
-	@IBOutlet weak var backButton: UIButton!
 
 	private var viewModel: DetailAppInfoViewModelProtocol!
 	private var disposedBag = DisposeBag()
