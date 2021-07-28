@@ -36,8 +36,13 @@ ViewModel은 UseCase에 대해, UseCase는 Repository에 대해 모름 채택한
 + Data Source도 Repository에서 한번에 수행 가능하면 한번에 수행
 + Domain Model과 Entity와의 차이도 크지 않다면 똑같이 사용해도 괜찮음
 
+## TODO
+Swift Package Manager
+Reactor Kit
+Kingfisher or SDWebImage
 
-참고
+
+## 참고
 
 https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 
