@@ -9,12 +9,30 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Kingfisher
+import Then
 
 class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var imageView: UIImageView!
+
+//	lazy var activityIndicator: UIActivityIndicatorView = {
+//		let activityIndicator = UIActivityIndicatorView()
+//		activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+//		activityIndicator.center = self.view.center
+//		activityIndicator.hidesWhenStopped = false
+//		activityIndicator.style = .medium
+//
+//		return activityIndicator
+//	}()	// then 라이브러리를 사용해보자~
+
+	lazy var activityIndicator = UIActivityIndicatorView().then {
+		$0.frame =  CGRect(x: 0, y: 0, width: 50, height: 50)
+		$0.center = self.view.center
+		$0.hidesWhenStopped = false
+		$0.style = .medium
+	}
 
 	private var viewModel: SearchAppListViewModelProtocol!
 	private var bag = DisposeBag()
@@ -85,9 +103,6 @@ class SearchAppListViewController: UIViewController, StoryboardInstantiable {
 extension SearchAppListViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		searchBar.resignFirstResponder()
-	}
-
-	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 	}
 }
 

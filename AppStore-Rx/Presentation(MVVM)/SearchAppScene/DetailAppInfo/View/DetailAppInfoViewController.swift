@@ -13,29 +13,42 @@ class DetailAppInfoViewController: UIViewController {
 
 	@IBOutlet weak var iconImageView: UIImageView!
 	@IBOutlet weak var descriptionLabel: UILabel!
+	@IBOutlet weak var newSceneButton: UIButton!
+	@IBOutlet weak var backButton: UIButton!
 
 	@IBAction func backButton(_ sender: Any) {
-		viewModel.popViewController()
 	}
 
 	@IBAction func newScene(_ sender: Any) {
-		viewModel.presentNewScene()
 	}
 
-
 	private var viewModel: DetailAppInfoViewModelProtocol!
-	private var bag = DisposeBag()
+	private var disposedBag = DisposeBag()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		viewModel.viewDidLoad()
-			.observe(on: MainScheduler.instance)
-			.subscribe(onNext: { [weak self] appInfo in
-//				self?.iconImageView.load(url: appInfo.appIconImageUrl)
-				self?.iconImageView.kf.setImage(with: URL(string: appInfo.appIconImageUrl))
-				self?.descriptionLabel.text = appInfo.description
-			})
-			.disposed(by: bag)
+		bind()
+	}
+
+	private func bind() {
+		let input = DetailAppInfoViewModel.Input(
+			newSceneTrigger: newSceneButton.rx.tap.asDriver(),
+			dismissTrigger: backButton.rx.tap.asDriver()
+		)
+		let output = viewModel.transform(input: input)
+
+		output.iconImage.drive(onNext: { appIconImageUrl in
+			self.iconImageView.kf.setImage(with: URL(string: appIconImageUrl))
+		})
+		.disposed(by: disposedBag)
+		output.detail.drive(onNext: { detail in
+			self.descriptionLabel.text = detail
+		})
+		.disposed(by: disposedBag)
+		output.newScene.drive()
+			.disposed(by: disposedBag)
+		output.dismiss.drive()
+			.disposed(by: disposedBag)
 	}
 
 	static func create(with viewModel: DetailAppInfoViewModelProtocol) -> DetailAppInfoViewController {

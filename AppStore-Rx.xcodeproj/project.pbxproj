@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,7 @@
 		B23DCB95269FBED000744416 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DCB93269FBED000744416 /* SecondViewController.swift */; };
 		B23DCB96269FBED000744416 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23DCB94269FBED000744416 /* SecondViewController.xib */; };
 		B23DCB9B269FBFC300744416 /* SecondSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DCB9A269FBFC300744416 /* SecondSceneDIContainer.swift */; };
+		B282EFF226B0D7E000C5D933 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B282EFF126B0D7E000C5D933 /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D4E81EFBDDCC115F7B60DD /* Pods_AppStore_Rx.framework in Frameworks */,
+				B282EFF226B0D7E000C5D933 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +487,9 @@
 			dependencies = (
 			);
 			name = "AppStore-Rx";
+			packageProductDependencies = (
+				B282EFF126B0D7E000C5D933 /* Then */,
+			);
 			productName = "AppStore-Rx";
 			productReference = 4377570B267B91D90000909C /* AppStore-Rx.app */;
 			productType = "com.apple.product-type.application";
@@ -559,6 +564,9 @@
 				Base,
 			);
 			mainGroup = 43775702267B91D90000909C;
+			packageReferences = (
+				B282EFF026B0D7E000C5D933 /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = 4377570C267B91D90000909C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1059,6 +1067,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B282EFF026B0D7E000C5D933 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B282EFF126B0D7E000C5D933 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B282EFF026B0D7E000C5D933 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		43775717267B91D90000909C /* AppStore_Rx.xcdatamodeld */ = {
