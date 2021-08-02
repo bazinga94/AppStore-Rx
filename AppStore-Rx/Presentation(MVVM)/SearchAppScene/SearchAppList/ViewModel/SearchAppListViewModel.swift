@@ -70,6 +70,6 @@ class SearchAppListViewModel: SearchAppListViewModelProtocol {
 	}
 
 	func didTapCell(appInfo: AppInfo) {
-		self.searchAppListAction.showDetailAppInfoViewController(appInfo: appInfo)
+		self.searchAppListAction.showDetailAppInfoViewController(appInfo: appInfo)		// TODO: 선택 후 통신 결과가 나왔을때 화면 전환을 Rx로 구현해보자
 	}
 }
