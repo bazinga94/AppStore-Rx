@@ -44,6 +44,7 @@
 		B23DCB96269FBED000744416 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B23DCB94269FBED000744416 /* SecondViewController.xib */; };
 		B23DCB9B269FBFC300744416 /* SecondSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23DCB9A269FBFC300744416 /* SecondSceneDIContainer.swift */; };
 		B282EFF226B0D7E000C5D933 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B282EFF126B0D7E000C5D933 /* Then */; };
+		B2AFA94F26DCA4A000D5ED18 /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AFA94E26DCA4A000D5ED18 /* CellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		B23DCB93269FBED000744416 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B23DCB94269FBED000744416 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		B23DCB9A269FBFC300744416 /* SecondSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSceneDIContainer.swift; sourceTree = "<group>"; };
+		B2AFA94E26DCA4A000D5ED18 /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 		E42F87DE9BAB5F089476AD44 /* Pods_AppStore_Rx_AppStore_RxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStore_Rx_AppStore_RxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5321332DB458DFFDFA9A22B /* Pods-AppStore-RxTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStore-RxTests.release.xcconfig"; path = "Target Support Files/Pods-AppStore-RxTests/Pods-AppStore-RxTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				4386C95D2682126F009B4A2D /* Dynamic.swift */,
+				B2AFA94E26DCA4A000D5ED18 /* CellController.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				4388B2FB268388C50007EB30 /* ApiConfig.swift in Sources */,
 				B239657E2681B1FE00432C67 /* SearchAppDataTransferService.swift in Sources */,
 				B23965762681B06300432C67 /* SearchAppSceneDIContainer.swift in Sources */,
+				B2AFA94F26DCA4A000D5ED18 /* CellController.swift in Sources */,
 				43856D0F268DA88600005D0C /* DetailAppInfoViewModel.swift in Sources */,
 				43775719267B91D90000909C /* AppStore_Rx.xcdatamodeld in Sources */,
 				B239651326807F1F00432C67 /* SearchAppListViewController.swift in Sources */,
